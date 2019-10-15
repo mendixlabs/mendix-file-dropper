@@ -3,7 +3,7 @@
 
 # FileDropper
 
-Inspired by the [Mendix Dropzone widget](https://appstore.home.mendix.com/link/app/916/). Drop files in your Mendix application. WebModeler compatible! This widget is based on [react-dropzone](https://github.com/react-dropzone/react-dropzone) and [MobX](https://github.com/mobxjs/mobx) (version 4, needed for IE11 compatibility).
+Inspired by the [Mendix Dropzone widget](https://appstore.home.mendix.com/link/app/916/). Drop files/images in your Mendix application. WebModeler compatible! This widget is based on [react-dropzone](https://github.com/react-dropzone/react-dropzone) and [MobX](https://github.com/mobxjs/mobx) (version 4, needed for IE11 compatibility).
 
 ![appstore](/assets/AppStoreIcon.png)
 
