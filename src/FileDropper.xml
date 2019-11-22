@@ -7,221 +7,241 @@
     <icon>iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAN11AADddQGsh8ODAAAGAGlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDUgNzkuMTYzNDk5LCAyMDE4LzA4LzEzLTE2OjQwOjIyICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxOSAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMTktMTAtMTVUMTg6NDM6MDgrMDI6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDE5LTEwLTE1VDE4OjQ0OjM1KzAyOjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDE5LTEwLTE1VDE4OjQ0OjM1KzAyOjAwIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyIgcGhvdG9zaG9wOklDQ1Byb2ZpbGU9InNSR0IgSUVDNjE5NjYtMi4xIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjhiM2ZmMjE3LWIwNDEtNDc5Yi05ZTQ4LTRlMWFmNTIwMTlhZCIgeG1wTU06RG9jdW1lbnRJRD0iYWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOmUyZDNmOWVmLWJkOTUtZGE0Ni05NDk2LWM0ODBlMDAxMDdhNiIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ4bXAuZGlkOjNkN2VjNmE0LTQyNTUtNDI0MS1hMjNmLWFhZDdjZDM4YmIxMSI+IDx4bXBNTTpIaXN0b3J5PiA8cmRmOlNlcT4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImNyZWF0ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6M2Q3ZWM2YTQtNDI1NS00MjQxLWEyM2YtYWFkN2NkMzhiYjExIiBzdEV2dDp3aGVuPSIyMDE5LTEwLTE1VDE4OjQzOjA4KzAyOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxOSAoTWFjaW50b3NoKSIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6OGIzZmYyMTctYjA0MS00NzliLTllNDgtNGUxYWY1MjAxOWFkIiBzdEV2dDp3aGVuPSIyMDE5LTEwLTE1VDE4OjQ0OjM1KzAyOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxOSAoTWFjaW50b3NoKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8L3JkZjpTZXE+IDwveG1wTU06SGlzdG9yeT4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4tGnGSAAAFZ0lEQVR4nO3baahVVRTA8d+971GEPaLSJvNZkVaaZISVRpZZEdSHCKOR5rQSigiC6ENfSogmJM0KbUJp7kvYnBbSXGYTDUaWTWSzZlGkrw/7XDzvvHPvPefecz3Ee3+48PY+e++19jp7WGvv8yp9fX0GM9WyFSibIQOUrUDZDBmgbAXKZsgAZStQNoPeAJWuSndRbR2AozEFY7AbdkAXfsMP+BSvYzk+KkpwOxRhgLNxEY7KWW8FFuKBdhVoh3YMcCJuwEFt6vABrsWTbbbTEq0aYAEuyVDuD/ShJ0PZuzGrFWXaIa8BevA8DqvzfBmew1v4Ej8LBtgZo3Eojsf0OvXfxHFYn0epdshjgO3wnrDAJVmIufgwY1vjcQUuTnn2OQ4WRk/HyWOAlYJicT7BhXi1RfmTsUjYQeKsSpHVEbL6AQsNVOgpHKj1zsNrmIClifyJkcw4PbKtJbnIMgKm4uVE3rM4oWBdnk5p807siXEYHuX9hC8E4y3FG+0IzWKAtRiVSI9uR2gDvkJvzjovYY6wOOem2RSYoX/nCft/pziphTpHCzvPna0IbGaAaxLpJbKv9K3wARbXebYx+tVjljAttskjsNEU2FuYa3FG4Zs8AlpgZEzGM3hQ2IFqeXviEGF0po2YtzEpq7BGBrhc2NtrrBAWxK3BvcKwfrBJuaMErzS5jd4jbM9NaTQFJifST2RpsCDO17zzhN1pgoG71AU4PIugRgYYm0i/naXBEtgkLIRfJfIXZKncyADDE+m12XUqhZMT6Ym4Hvs1qlTPAPtiRCz9J35vUbGtxSq8kMi7VnDXF2OvtEppBjgT7wvBT5xO3KHdGP2KYlGd/LOE06hzkg+Su8CVuLVOI/tHjRTFMXgx+nu6EEq3y2h8bODLi3M1bqol4gaYgUdTKqwUjq3uU9w06MUaW0bgZsHvKGKd2VnwV47AudJ9gjPwEFsMMALrUgpejtsLUCpOl+BgJX3+tdhHWNWL5DLMT8nfFetqbyCtwPGK7zwhaEkLeHq1GNA04Q7pJ1ALCENwJE5NPJzdIWXmY1qD59Okv4x2WWbgeeMp6O2qVqqzcWzswcc4rwNKzMZ1GcpNEmL+twqW/47woneJ5f1SNXB4zFU8x2BejvLzojpFc1siPa3SVeleo7+TME4YBUWRXPGzUuTOUGMMPoul11axYyzjb3xboMAuIYps5Q6yGtXtKlCf7/FXLL1TNSFgc/Qrgm68K/8RV5zeqI3CLjAT9FXxSyxjO+xeQMMVIRCZgA2JXyOXui+l/ISorUoBeu2uv5f4azdW6/+WpkZ57dAnHErM0b/DPYI7vX2dehsFl3tDLK8i3DQXEYskD3RWV4Wr6jhXFiCIsNis1/9tfqfxFNsclYnXWa//wtUOyb4trxp4PT0eMwsSmKRH46Fc0YHLj4iZQt/iPFDF13g88eAundmHy2Ka0Kc4j+Hr2vZ0WUqlF+vk/9+4VHqoPZst28s6nC4KEWPMF9zi+/GKMFr+yalA7RuBVqiov2DWYxshHJ4i6J4WDp8min7j++vDwpn7zYnCk2KN/IV/cyizQTiTa/Wqe5hwpJVnXejW+EDkKjwSLxznFuFjpoXYNqVyo4bT6NHel2hV7NFG/Th/C3cFS5ICkiwW3lq9K6r/I7U+LUk+aHY7PFaIm4+M/h4un2+enAI9QqxRb0hvEM4nao7Q9oLjlGcKbMKPgjO3QrjQqetH5P1GaJj8Qzq+COY1QCuL4GaNL1H7kTfIyNxwQdRig44x6D+VHTLAVpbXzNdvFisUTqcOGupRi/YaLYJFHchkojL0b3ODnCEDlK1A2QwZoGwFymbIAGUrUDaD3gD/Aer9COGYw7uiAAAAAElFTkSuQmCC</icon>
     <properties>
         <!-- DATA -->
-        <property key="dataFileEntity" type="entity" required="true">
-            <caption>File entity</caption>
-            <category>Data</category>
-            <description></description>
-        </property>
-        <property key="dataNameAttr" type="attribute" required="true" entityProperty="dataFileEntity">
-            <caption>Name attribute</caption>
-            <category>Data</category>
-            <description>Attribute for name of the file, usually 'Name'</description>
-            <attributeTypes>
-                <attributeType name="String"/>
-            </attributeTypes>
-        </property>
-        <property key="dataTypeAttr" type="attribute" required="false" entityProperty="dataFileEntity">
-            <caption>Type attribute</caption>
-            <category>Data</category>
-            <description>Attribute for the filetype, it is not required, it can be used to filter data. Values are like 'image/jpeg' etc.</description>
-            <attributeTypes>
-                <attributeType name="String"/>
-            </attributeTypes>
-        </property>
-        <property key="dataExtAttr" type="attribute" required="false" entityProperty="dataFileEntity">
-            <caption>Extension attribute</caption>
-            <category>Data</category>
-            <description>Attribute for the extension. Is is not required, but can be used to filter data. Values are like 'jpeg', 'png' etc. The widget will determine based on the fileType what the expected extension is. If unknown, it will set it to 'unknown'.</description>
-            <attributeTypes>
-                <attributeType name="String"/>
-            </attributeTypes>
-        </property>
-        <property key="dataContextAssociation" type="entity" entityProperty="dataFileEntity" isPath="yes" pathType="reference" required="false">
-            <caption>Association to context</caption>
-            <category>Data</category>
-            <description>If provided used to set the association of new files to the context. Should be a path to the context.</description>
-        </property>
-        <property key="dataAutoSave" type="boolean" defaultValue="true">
-            <caption>Auto save</caption>
-            <category>Data</category>
-            <description>Automatically save to Mendix. If you set this to 'false' you will have to press a manual button to save the file to Mendix.</description>
-        </property>
-        <property key="dataSaveMethod" type="enumeration" defaultValue="postRequest">
-            <caption>Save method</caption>
-            <category>Data</category>
-            <description>Determine how the data is uploaded. Using the saveDocument method is the easiest, where it will use the standard Mendix methods. This is the most stable. Downside: no progress, so the progress bar will be shown as 50% while uploading. You can also use the POST method, which would provide a progress bar.</description>
-            <enumerationValues>
-                <enumerationValue key="postRequest">POST</enumerationValue>
-                <enumerationValue key="saveDocument">saveDocument</enumerationValue>
-            </enumerationValues>
-        </property>
+        <propertyGroup caption="Data">
+            <propertyGroup caption="Entity">
+                <property key="dataFileEntity" type="entity" required="true">
+                    <caption>File entity</caption>
+                    <description></description>
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Attributes">
+                <property key="dataNameAttr" type="attribute" required="true" entityProperty="dataFileEntity">
+                    <caption>Name attribute</caption>
+                    <description>Attribute for name of the file, usually 'Name'</description>
+                    <attributeTypes>
+                        <attributeType name="String"/>
+                    </attributeTypes>
+                </property>
+                <property key="dataTypeAttr" type="attribute" required="false" entityProperty="dataFileEntity">
+                    <caption>Type attribute</caption>
+                    <description>Attribute for the filetype, it is not required, it can be used to filter data. Values are like 'image/jpeg' etc.</description>
+                    <attributeTypes>
+                        <attributeType name="String"/>
+                    </attributeTypes>
+                </property>
+                <property key="dataExtAttr" type="attribute" required="false" entityProperty="dataFileEntity">
+                    <caption>Extension attribute</caption>
+                    <description>Attribute for the extension. Is is not required, but can be used to filter data. Values are like 'jpeg', 'png' etc. The widget will determine based on the fileType what the expected extension is. If unknown, it will set it to 'unknown'.</description>
+                    <attributeTypes>
+                        <attributeType name="String"/>
+                    </attributeTypes>
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Context">
+                <property key="dataContextAssociation" type="entity" entityProperty="dataFileEntity" isPath="yes" pathType="reference" required="false">
+                    <caption>Association to context</caption>
+                    <description>If provided used to set the association of new files to the context. Should be a path to the context.</description>
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Save">
+                <property key="dataAutoSave" type="boolean" defaultValue="true">
+                    <caption>Auto save</caption>
+                    <description>Automatically save to Mendix. If you set this to 'false' you will have to press a manual button to save the file to Mendix.</description>
+                </property>
+                <property key="dataSaveMethod" type="enumeration" defaultValue="postRequest">
+                    <caption>Save method</caption>
+                    <description>Determine how the data is uploaded. Using the saveDocument method is the easiest, where it will use the standard Mendix methods. This is the most stable. Downside: no progress, so the progress bar will be shown as 50% while uploading. You can also use the POST method, which would provide a progress bar.</description>
+                    <enumerationValues>
+                        <enumerationValue key="postRequest">POST</enumerationValue>
+                        <enumerationValue key="saveDocument">saveDocument</enumerationValue>
+                    </enumerationValues>
+                </property>
+            </propertyGroup>
+        </propertyGroup>
+
         <!-- RESTRICTIONS -->
-        <property key="restrictionMaxFileSize" type="integer" defaultValue="5">
-            <caption>Max. file size</caption>
-            <category>Restrictions</category>
-            <description>Maximum file size in MB</description>
-        </property>
-        <property key="restrictionMaxFileCount" type="integer" defaultValue="0">
-            <caption>Max. files</caption>
-            <category>Restrictions</category>
-            <description>Maximum number of files to upload, if > 0</description>
-        </property>
-        <property key="restrictionMimeType" type="string" required="false" defaultValue="image/*,audio/*,video/*">
-            <caption>Mime types</caption>
-            <category>Restrictions</category>
-            <description>Restrict the files to a certain type using Mime types. You can use a string like 'image/*,audio/*,video/*'.
+
+        <propertyGroup caption="Restrictions">
+            <property key="restrictionMaxFileSize" type="integer" defaultValue="5">
+                <caption>Max. file size</caption>
+                <description>Maximum file size in MB</description>
+            </property>
+            <property key="restrictionMaxFileCount" type="integer" defaultValue="0">
+                <caption>Max. files</caption>
+                <description>Maximum number of files to upload, if > 0</description>
+            </property>
+            <property key="restrictionMimeType" type="string" required="false" defaultValue="image/*,audio/*,video/*">
+                <caption>Mime types</caption>
+                <description>Restrict the files to a certain type using Mime types. You can use a string like 'image/*,audio/*,video/*'.
 
 Note 1: This might not always be accurate. There can be differences between platforms &amp; browsers. To be sure it is better to use the 'onAccept Microflow'
 Note 2: When using an Entity that is/inherits 'System.Image', Mime types will always be ignored and set to 'image/*'. You can further restrict this using the 'onAccept Microflow'</description>
-        </property>
+            </property>
+        </propertyGroup>
+
         <!-- VERIFICATION -->
-        <property key="verificationOnAcceptMicroflow" type="microflow" required="false" entityProperty="dataFileEntity">
-            <caption>onAccept Mf</caption>
-            <category>Verification</category>
-            <description>Microflow that will be called to determine if a file is accepted. If not, it should return a false. The Dropzone will remove the file by itself. This microflow will use the entity defined in 'Data'.
+
+        <propertyGroup caption="Verification">
+            <propertyGroup caption="On File object">
+                <property key="verificationOnAcceptMicroflow" type="microflow" required="false" entityProperty="dataFileEntity">
+                    <caption>onAccept Mf</caption>
+                    <description>Microflow that will be called to determine if a file is accepted. If not, it should return a false. The Dropzone will remove the file by itself. This microflow will use the entity defined in 'Data'.
 
 Note: This microflow is executed AFTER the file is uploaded. When doing big uploads, it is better to maybe also add a 'beforeAccept Nanoflow'.</description>
-            <returnType type="Boolean" />
-        </property>
-        <property key="verificationEntity" type="entity" required="false" allowNonPersistableEntities="true">
-            <caption>Verification entity</caption>
-            <category>Verification</category>
-            <description>This entity is used to verify the file BEFORE it is uploaded to the server. The widget will create an object and add the defined attributes. After the 'beforeAccept Microflow/Nanoflow' returns a true (boolean) value, the file itself will be committed and uploaded.
+                    <returnType type="Boolean" />
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Verification Entity">
+                <property key="verificationEntity" type="entity" required="false" allowNonPersistableEntities="true">
+                    <caption>Verification entity</caption>
+                    <description>This entity is used to verify the file BEFORE it is uploaded to the server. The widget will create an object and add the defined attributes. After the 'beforeAccept Microflow/Nanoflow' returns a true (boolean) value, the file itself will be committed and uploaded.
 
 Note: Only non-persistent entities are accepted.
-            </description>
-        </property>
-        <property key="verificationNameAttr" type="attribute" required="false" entityProperty="verificationEntity">
-            <caption>Name attr.</caption>
-            <category>Verification</category>
-            <description>Attribute for the name of the file, usually 'Name'.</description>
-            <attributeTypes>
-                <attributeType name="String"/>
-            </attributeTypes>
-        </property>
-        <property key="verificationTypeAttr" type="attribute" required="false" entityProperty="verificationEntity">
-            <caption>Type attr.</caption>
-            <category>Verification</category>
-            <description>Attribute for the filetype, it is not required, it can be used to filter data in the on accept microflow. Values are like 'image/jpeg'.</description>
-            <attributeTypes>
-                <attributeType name="String"/>
-            </attributeTypes>
-        </property>
-        <property key="verificationExtAttr" type="attribute" required="false" entityProperty="verificationEntity">
-            <caption>Extension attr.</caption>
-            <category>Verification</category>
-            <description>Attribute for the extension. Is is not required, but can be used to filter data. Values are like 'jpeg', 'png' etc. The widget will determine based on the fileType what the expected extension is. If unknown, it will set it to 'unknown'.</description>
-            <attributeTypes>
-                <attributeType name="String"/>
-            </attributeTypes>
-        </property>
-        <property key="verificationSizeAttr" type="attribute" required="false" entityProperty="verificationEntity">
-            <caption>Size attr.</caption>
-            <category>Verification</category>
-            <description>Szse of the file in bytes.</description>
-            <attributeTypes>
-                <attributeType name="Long"/>
-            </attributeTypes>
-        </property>
-        <property key="verificationBeforeAcceptMicroflow" type="microflow" required="false" entityProperty="verificationEntity">
-            <caption>Before Accept Mf</caption>
-            <category>Verification</category>
-            <description>Microflow that will be called BEFORE the file is uploaded. It will pass an object defined as Verification entity. The microflow should return a String which serves as a reason NOT to accept the file. If the microflow returns an empty string (either empty or ''), it considers the file to be accepted.</description>
-            <returnType type="String" />
-        </property>
-        <property key="verificationBeforeAcceptNanoflow" type="nanoflow" required="false" entityProperty="verificationEntity">
-            <caption>Before Accept Nf</caption>
-            <category>Verification</category>
-            <description>Nanoflow that will be called BEFORE the file is uploaded. It will pass an object defined as Verification entity. The microflow should return a String which serves as a reason NOT to accept the file. If the microflow returns an empty string (either empty or ''), it considers the file to be accepted.</description>
-            <returnType type="String" />
-        </property>
+                    </description>
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Verification Attributes">
+                <property key="verificationNameAttr" type="attribute" required="false" entityProperty="verificationEntity">
+                    <caption>Name attr.</caption>
+                    <description>Attribute for the name of the file, usually 'Name'.</description>
+                    <attributeTypes>
+                        <attributeType name="String"/>
+                    </attributeTypes>
+                </property>
+                <property key="verificationTypeAttr" type="attribute" required="false" entityProperty="verificationEntity">
+                    <caption>Type attr.</caption>
+                    <description>Attribute for the filetype, it is not required, it can be used to filter data in the on accept microflow. Values are like 'image/jpeg'.</description>
+                    <attributeTypes>
+                        <attributeType name="String"/>
+                    </attributeTypes>
+                </property>
+                <property key="verificationExtAttr" type="attribute" required="false" entityProperty="verificationEntity">
+                    <caption>Extension attr.</caption>
+                    <description>Attribute for the extension. Is is not required, but can be used to filter data. Values are like 'jpeg', 'png' etc. The widget will determine based on the fileType what the expected extension is. If unknown, it will set it to 'unknown'.</description>
+                    <attributeTypes>
+                        <attributeType name="String"/>
+                    </attributeTypes>
+                </property>
+                <property key="verificationSizeAttr" type="attribute" required="false" entityProperty="verificationEntity">
+                    <caption>Size attr.</caption>
+                    <description>Szse of the file in bytes.</description>
+                    <attributeTypes>
+                        <attributeType name="Long"/>
+                    </attributeTypes>
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Verification Actions">
+                <property key="verificationBeforeAcceptMicroflow" type="microflow" required="false" entityProperty="verificationEntity">
+                    <caption>Before Accept Mf</caption>
+                    <description>Microflow that will be called BEFORE the file is uploaded. It will pass an object defined as Verification entity. The microflow should return a String which serves as a reason NOT to accept the file. If the microflow returns an empty string (either empty or ''), it considers the file to be accepted.</description>
+                    <returnType type="String" />
+                </property>
+                <property key="verificationBeforeAcceptNanoflow" type="nanoflow" required="false" entityProperty="verificationEntity">
+                    <caption>Before Accept Nf</caption>
+                    <description>Nanoflow that will be called BEFORE the file is uploaded. It will pass an object defined as Verification entity. The microflow should return a String which serves as a reason NOT to accept the file. If the microflow returns an empty string (either empty or ''), it considers the file to be accepted.</description>
+                    <returnType type="String" />
+                </property>
+            </propertyGroup>
+        </propertyGroup>
+
         <!-- EVENTS -->
-        <property key="eventsAfterCommitMf" type="microflow" required="false" entityProperty="dataFileEntity">
-            <caption>After commit microflow</caption>
-            <category>Events</category>
-            <description>After the file is succesfully committed, this microflow can be executed</description>
-            <returnType type="Void" />
-        </property>
-        <property key="eventsAfterCommitNf" type="nanoflow" required="false" entityProperty="dataFileEntity">
-            <caption>After commit nanoflow</caption>
-            <category>Events</category>
-            <description>After the file is succesfully committed, this nanoflow can be executed</description>
-            <returnType type="Void" />
-        </property>
+
+        <propertyGroup caption="Events">
+            <property key="eventsAfterCommitMf" type="microflow" required="false" entityProperty="dataFileEntity">
+                <caption>After commit microflow</caption>
+                <description>After the file is succesfully committed, this microflow can be executed</description>
+                <returnType type="Void" />
+            </property>
+            <property key="eventsAfterCommitNf" type="nanoflow" required="false" entityProperty="dataFileEntity">
+                <caption>After commit nanoflow</caption>
+                <description>After the file is succesfully committed, this nanoflow can be executed</description>
+                <returnType type="Void" />
+            </property>
+        </propertyGroup>
+
         <!-- UI -->
-        <property key="uiDeleteButtonStyle" type="enumeration" defaultValue="glyphicon">
-            <caption>Delete button style</caption>
-            <category>UI</category>
-            <description>Choose the glyphicon (see next) or the built-in icon</description>
-            <enumerationValues>
-                 <enumerationValue key="glyphicon">Glyph icon</enumerationValue>
-                 <enumerationValue key="builtin">Built-in icon</enumerationValue>
-            </enumerationValues>
-        </property>
-        <property key="uiDeleteButtonGlyph" type="string" required="false" defaultValue="remove-circle">
-            <caption>Delete glyphicon class</caption>
-            <category>UI</category>
-            <description>This is a standard glyphicon class. The prefix for glyphicons ("glyphicon glyphicon-") is automatically added to this. </description>
-        </property>
-        <property key="uiSaveButtonStyle" type="enumeration" defaultValue="glyphicon">
-            <caption>Save button style</caption>
-            <category>UI</category>
-            <description>Choose the glyphicon (see next) or the built-in icon</description>
-            <enumerationValues>
-                 <enumerationValue key="glyphicon">Glyph icon</enumerationValue>
-                 <enumerationValue key="builtin">Built-in icon</enumerationValue>
-            </enumerationValues>
-        </property>
-        <property key="uiSaveButtonGlyph" type="string" required="false" defaultValue="upload">
-            <caption>Save glyphicon class</caption>
-            <category>UI</category>
-            <description>This is a standard glyphicon class. The prefix for glyphicons ("glyphicon glyphicon-") is automatically added to this. </description>
-        </property>
-        <property key="uiErrorButtonStyle" type="enumeration" defaultValue="glyphicon">
-            <caption>Error button style</caption>
-            <category>UI</category>
-            <description>Choose the glyphicon (see next) or the built-in icon</description>
-            <enumerationValues>
-                 <enumerationValue key="glyphicon">Glyph icon</enumerationValue>
-                 <enumerationValue key="builtin">Built-in icon</enumerationValue>
-            </enumerationValues>
-        </property>
-        <property key="uiErrorButtonGlyph" type="string" required="false" defaultValue="warning-sign">
-            <caption>Error glyphicon class</caption>
-            <category>UI</category>
-            <description>This is a standard glyphicon class. The prefix for glyphicons ("glyphicon glyphicon-") is automatically added to this. </description>
-        </property>
-        <property key="uiShowPreviewLabel" type="boolean" defaultValue="false">
-            <caption>Show type label</caption>
-            <category>UI</category>
-            <description>Show the type label in the previews</description>
-        </property>
-        <property key="uiShowImagePreviews" type="boolean" defaultValue="true">
-            <caption>Show image previews</caption>
-            <category>UI</category>
-            <description>Show previews of images. The widget will determine by itself, based on the Mime type, whether or not it can show a preview. It does this by analyzing the file and if it determines it is a 'image/*' file, show a base64 encoded version of the image.</description>
-        </property>
+
+        <propertyGroup caption="UI">
+            <propertyGroup caption="Delete Button">
+                <property key="uiDeleteButtonStyle" type="enumeration" defaultValue="glyphicon">
+                    <caption>Delete button style</caption>
+                    <description>Choose the glyphicon (see next) or the built-in icon</description>
+                    <enumerationValues>
+                        <enumerationValue key="glyphicon">Glyph icon</enumerationValue>
+                        <enumerationValue key="builtin">Built-in icon</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="uiDeleteButtonGlyph" type="string" required="false" defaultValue="remove-circle">
+                    <caption>Delete glyphicon class</caption>
+                    <description>This is a standard glyphicon class. The prefix for glyphicons ("glyphicon glyphicon-") is automatically added to this. </description>
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Save Button">
+                <property key="uiSaveButtonStyle" type="enumeration" defaultValue="glyphicon">
+                    <caption>Save button style</caption>
+                    <description>Choose the glyphicon (see next) or the built-in icon</description>
+                    <enumerationValues>
+                        <enumerationValue key="glyphicon">Glyph icon</enumerationValue>
+                        <enumerationValue key="builtin">Built-in icon</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="uiSaveButtonGlyph" type="string" required="false" defaultValue="upload">
+                    <caption>Save glyphicon class</caption>
+                    <description>This is a standard glyphicon class. The prefix for glyphicons ("glyphicon glyphicon-") is automatically added to this. </description>
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Error Button">
+                <property key="uiErrorButtonStyle" type="enumeration" defaultValue="glyphicon">
+                    <caption>Error button style</caption>
+                    <description>Choose the glyphicon (see next) or the built-in icon</description>
+                    <enumerationValues>
+                        <enumerationValue key="glyphicon">Glyph icon</enumerationValue>
+                        <enumerationValue key="builtin">Built-in icon</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="uiErrorButtonGlyph" type="string" required="false" defaultValue="warning-sign">
+                    <caption>Error glyphicon class</caption>
+                    <description>This is a standard glyphicon class. The prefix for glyphicons ("glyphicon glyphicon-") is automatically added to this. </description>
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Other">
+                <property key="uiShowPreviewLabel" type="boolean" defaultValue="false">
+                    <caption>Show type label</caption>
+                    <description>Show the type label in the previews</description>
+                </property>
+                <property key="uiShowImagePreviews" type="boolean" defaultValue="true">
+                    <caption>Show image previews</caption>
+                    <description>Show previews of images. The widget will determine by itself, based on the Mime type, whether or not it can show a preview. It does this by analyzing the file and if it determines it is a 'image/*' file, show a base64 encoded version of the image.</description>
+                </property>
+                <property key="uiHideProgressOnComplete" type="boolean" defaultValue="true">
+                    <caption>Hide progress bar on complete</caption>
+                    <description>When uploading to Mendix is complete, hide the progress bar</description>
+                </property>
+            </propertyGroup>
+        </propertyGroup>
+
         <!-- TEXTS -->
-        <property key="textDropZone" type="translatableString" required="false">
-            <caption>Dropzone</caption>
-            <category>Texts</category>
-            <description>Description in the dropzone</description>
-            <translations>
-                 <translation lang="en_US">Click here, or drop files here to upload.</translation>
-                 <translation lang="en_GB">Click here, or drop files here to upload.</translation>
-                 <translation lang="nl_NL">Click here, or drop files here to upload.</translation>
-            </translations>
-        </property>
-        <property key="textDropZoneMaximum" type="translatableString" required="false">
-            <caption>Maximum</caption>
-            <category>Texts</category>
-            <description>Message when maximum is reached</description>
-            <translations>
-                 <translation lang="en_US">Maximum amount of files reached, please consider removing files</translation>
-                 <translation lang="en_GB">Maximum amount of files reached, please consider removing files</translation>
-                 <translation lang="nl_NL">Maximum amount of files reached, please consider removing files</translation>
-            </translations>
-        </property>
-        <!-- EVENTS -->
+
+        <propertyGroup caption="Texts">
+            <property key="textDropZone" type="translatableString" required="false">
+                <caption>Dropzone</caption>
+                <description>Description in the dropzone</description>
+                <translations>
+                    <translation lang="en_US">Click here, or drop files here to upload.</translation>
+                    <translation lang="en_GB">Click here, or drop files here to upload.</translation>
+                    <translation lang="nl_NL">Click here, or drop files here to upload.</translation>
+                </translations>
+            </property>
+            <property key="textDropZoneMaximum" type="translatableString" required="false">
+                <caption>Maximum</caption>
+                <description>Message when maximum is reached</description>
+                <translations>
+                    <translation lang="en_US">Maximum amount of files reached, please consider removing files</translation>
+                    <translation lang="en_GB">Maximum amount of files reached, please consider removing files</translation>
+                    <translation lang="nl_NL">Maximum amount of files reached, please consider removing files</translation>
+                </translations>
+            </property>
+        </propertyGroup>
+
     </properties>
 </widget>

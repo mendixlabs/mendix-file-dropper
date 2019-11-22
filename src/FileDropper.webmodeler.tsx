@@ -71,7 +71,8 @@ export class preview extends Component<FileDropperContainerProps> {
             uiErrorButtonGlyph,
             uiErrorButtonStyle,
             uiShowPreviewLabel,
-            uiShowImagePreviews
+            uiShowImagePreviews,
+            uiHideProgressOnComplete
         } = props;
 
         const deleteButtonStyle =
@@ -86,7 +87,8 @@ export class preview extends Component<FileDropperContainerProps> {
             saveButtonStyle,
             errorButtonStyle,
             uiShowPreviewLabel,
-            uiShowImagePreviews
+            uiShowImagePreviews,
+            uiHideProgressOnComplete
         };
     }
 

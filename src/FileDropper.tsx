@@ -1,27 +1,28 @@
 import { Component, ReactNode, createElement } from "react";
 import { findDOMNode } from "react-dom";
-import { FileDropper } from "./components/FileDropper";
 import { hot } from "react-hot-loader/root";
-import { FileDropperContainerProps, Nanoflow } from "../typings/FileDropperProps";
-
-import "./ui/FileDropper.scss";
-import { FileDropperStore, FileDropperGuids } from "./store/fileDropperStore";
-import { FileDropperFile } from "./store/fileDropperFile";
+import mime from "mime";
 import {
     createObject,
-    saveDocument,
-    commitObject,
     deleteObjectGuid,
-    savePostMethod,
-    getObject,
-    entityIsImage,
-    entityIsFileDocument,
-    entityIsPersistable
-} from "./util/data";
+    commitObject,
+    getObject
+} from "@jeltemx/mendix-react-widget-utils/lib/objects";
+import { entityIsFileDocument, entityIsImage, entityIsPersistable } from "@jeltemx/mendix-react-widget-utils";
+import { saveDocument } from "@jeltemx/mendix-react-widget-utils/lib/documents";
+
+import { FileDropper } from "./components/FileDropper";
+import { FileDropperContainerProps, Nanoflow } from "../typings/FileDropperProps";
+import { FileDropperStore, FileDropperGuids } from "./store/fileDropperStore";
+import { FileDropperFile } from "./store/fileDropperFile";
+
+import { savePostMethod } from "./util/data";
+
 import { UIProps } from "./components/FileList";
 import { getTexts } from "./util/texts";
 import { validateProps, ValidationMessage, ValidateExtraProps } from "./util/validation";
-import mime from "mime";
+
+import "./ui/FileDropper.scss";
 
 export interface Action {
     microflow?: string;
@@ -126,7 +127,8 @@ class FileDropperContainer extends Component<FileDropperContainerProps, {}> {
             uiErrorButtonGlyph,
             uiErrorButtonStyle,
             uiShowPreviewLabel,
-            uiShowImagePreviews
+            uiShowImagePreviews,
+            uiHideProgressOnComplete
         } = this.props;
 
         const deleteButtonStyle =
@@ -141,7 +143,8 @@ class FileDropperContainer extends Component<FileDropperContainerProps, {}> {
             saveButtonStyle,
             errorButtonStyle,
             uiShowPreviewLabel,
-            uiShowImagePreviews
+            uiShowImagePreviews,
+            uiHideProgressOnComplete
         };
 
         return <FileDropper store={this.store} uiProps={ui} />;

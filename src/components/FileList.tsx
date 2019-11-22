@@ -17,6 +17,7 @@ export interface UIProps {
     errorButtonStyle: null | string;
     uiShowPreviewLabel: boolean;
     uiShowImagePreviews: boolean;
+    uiHideProgressOnComplete: boolean;
 }
 export interface FileListProps {
     uiProps?: UIProps;
@@ -31,6 +32,7 @@ export class FileList extends Component<FileListProps, {}> {
         super(props);
 
         this.renderDeleteButton = this.renderDeleteButton.bind(this);
+        this.renderProgress = this.renderProgress.bind(this);
     }
 
     render(): ReactNode {
@@ -170,6 +172,9 @@ export class FileList extends Component<FileListProps, {}> {
     private renderProgress(file: IFileDropperFile): ReactNode {
         const strokeColor = file.status === "error" ? "#F00" : "#a5a5a5";
         const percent = file.status === "error" ? 0 : file.loadProgress;
+        if (this.props.uiProps && this.props.uiProps.uiHideProgressOnComplete && file.status === "saved") {
+            return null;
+        }
         return (
             <div className={classes("item-progress")}>
                 <ProgressLine className={classes("item-progress__bar")} percent={percent} strokeColor={strokeColor} />

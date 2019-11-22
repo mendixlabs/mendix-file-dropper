@@ -40,9 +40,11 @@ export interface FileDropperContainerProps extends CommonProps {
     dataContextAssociation: string;
     dataAutoSave: boolean;
     dataSaveMethod: TypeSaveMethod;
+
     restrictionMaxFileSize: number;
     restrictionMaxFileCount: number;
     restrictionMimeType: string;
+
     verificationOnAcceptMicroflow: string;
     verificationEntity: string;
     verificationNameAttr: string;
@@ -51,8 +53,10 @@ export interface FileDropperContainerProps extends CommonProps {
     verificationSizeAttr: string;
     verificationBeforeAcceptMicroflow: string;
     verificationBeforeAcceptNanoflow: Nanoflow;
+
     eventsAfterCommitMf: string;
     eventsAfterCommitNf: Nanoflow;
+
     uiDeleteButtonStyle: TypeButtonStyle;
     uiDeleteButtonGlyph: string;
     uiSaveButtonStyle: TypeButtonStyle;
@@ -61,6 +65,8 @@ export interface FileDropperContainerProps extends CommonProps {
     uiErrorButtonGlyph: string;
     uiShowPreviewLabel: boolean;
     uiShowImagePreviews: boolean;
+    uiHideProgressOnComplete: boolean;
+
     textDropZone: string;
     textDropZoneMaximum: string;
 }

@@ -1,15 +1,13 @@
 {
   "name": "filedropper",
   "widgetName": "FileDropper",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Drop files in your Mendix Application",
   "copyright": "Mendix 2019",
   "author": "Jelte Lagendijk",
   "config": {
-    "_widgetPath": "./dist/MxTestProject/widgets",
-    "_projectPath": "./dist/MxTestProject/",
-    "widgetPath": "/Volumes/[C] Windows 10.hidden/Projects/MendixProjects/FileDropperTestProject-main/widgets",
-    "projectPath": "/Volumes/[C] Windows 10.hidden/Projects/MendixProjects/FileDropperTestProject-main/",
+    "widgetPath": "./dist/MxTestProject/widgets",
+    "projectPath": "./dist/MxTestProject/",
     "mendixHost": "http://10.211.55.3:8080",
     "developmentPort": "3000"
   },
@@ -31,7 +29,7 @@
   },
   "license": "Apache-2.0",
   "devDependencies": {
-    "@mendix/pluggable-widgets-tools": "^8.0.4",
+    "@mendix/pluggable-widgets-tools": "^8.4.0",
     "@types/big.js": "^4.0.5",
     "@types/enzyme": "^3.1.10",
     "@types/enzyme-adapter-react-16": "^1.0.2",
@@ -49,6 +47,7 @@
   },
   "dependencies": {
     "@bem-react/classname": "^1.5.4",
+    "@jeltemx/mendix-react-widget-utils": "^0.3.1",
     "axios": "^0.19.0",
     "core-js": "^3.2.1",
     "filesize": "^5.0.2",
