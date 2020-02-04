@@ -13,11 +13,11 @@ const defaultTexts: FileDropperTexts = {
 export const getTexts = (props: FileDropperContainerProps): FileDropperTexts => {
     const texts = defaultTexts;
 
-    if (props.textDropZone && props.textDropZone !== "") {
+    if (props.textDropZone) {
         texts.DROPZONE = props.textDropZone;
     }
 
-    if (props.textDropZoneMaximum && props.textDropZoneMaximum !== "") {
+    if (props.textDropZoneMaximum) {
         texts.DROPZONEMAXIMUM = props.textDropZoneMaximum;
     }
 

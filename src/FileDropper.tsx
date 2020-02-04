@@ -179,7 +179,7 @@ class FileDropperContainer extends Component<FileDropperContainerProps, {}> {
                 obj.set(this.props.dataTypeAttr, file.file.type);
             }
             if (this.props.dataExtAttr && file.file && file.file.type) {
-                const fileType = file.file && file.file.type ? mime.getExtension(file.file.type) : "unknown";
+                const fileType = mime.getExtension(file.file.type);
                 obj.set(this.props.dataExtAttr, fileType);
             }
 
@@ -274,7 +274,7 @@ class FileDropperContainer extends Component<FileDropperContainerProps, {}> {
                     testObj.set(this.props.verificationTypeAttr, file.file.type);
                 }
                 if (this.props.verificationExtAttr && file.file && file.file.type) {
-                    const fileType = file.file && file.file.type ? mime.getExtension(file.file.type) : "unknown";
+                    const fileType = mime.getExtension(file.file.type);
                     testObj.set(this.props.verificationExtAttr, fileType || "");
                 }
 
