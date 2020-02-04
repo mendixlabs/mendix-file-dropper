@@ -1,7 +1,10 @@
+[![Dependencies](https://david-dm.org/JelteMX/mendix-file-dropper.svg)]([https://david-dm.org/JelteMX/mendix-file-dropper](https://david-dm.org/JelteMX/mendix-file-dropper))
+[![DevDependencies](https://david-dm.org/JelteMX/mendix-file-dropper/dev-status.svg)]([https://david-dm.org/JelteMX/mendix-file-dropper?type=dev](https://david-dm.org/JelteMX/mendix-file-dropper?type=dev))
 [![Support](https://img.shields.io/badge/Support-Community%20(no%20active%20support)-orange.svg)](https://docs.mendix.com/developerportal/app-store/app-store-content-support)
 [![Studio](https://img.shields.io/badge/Studio%20version-8.0%2B-blue.svg)](https://appstore.home.mendix.com/link/modeler/)
 ![GitHub release](https://img.shields.io/github/release/JelteMX/mendix-file-dropper)
 ![GitHub issues](https://img.shields.io/github/issues/JelteMX/mendix-file-dropper)
+[![DeepScan grade](https://deepscan.io/api/teams/7221/projects/9412/branches/122227/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=7221&pid=9412&bid=122227)
 
 # FileDropper
 
