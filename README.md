@@ -95,7 +95,7 @@ Verification can be done in two ways:
 
 ## Demo project
 
-> _Will be published soon._
+> Test project can be downloaded [here](https://github.com/JelteMX/widget-test-projects#file-dropper)
 
 Here is the used Domain Model:
 
