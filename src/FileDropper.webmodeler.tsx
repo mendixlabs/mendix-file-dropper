@@ -1,7 +1,7 @@
 import { Component, ReactNode, createElement } from "react";
 import { FileDropperContainerProps } from "../typings/FileDropperProps";
 import { getTexts } from "./util/texts";
-import { UIProps, FileList } from "./components/FileList";
+import { UIProps, FileList, UIProgressBarColors } from "./components/FileList";
 import { classes } from "./util/classes";
 import { FileDropZone } from "./components/FileDropZone";
 import { Alerts } from "./components/Alerts";
@@ -82,13 +82,21 @@ export class preview extends Component<FileDropperContainerProps> {
         const errorButtonStyle =
             uiErrorButtonStyle === "glyphicon" && uiErrorButtonGlyph !== "" ? uiErrorButtonGlyph : null;
 
+        const uiProgressBarColors: UIProgressBarColors = {
+            primary: props.uiPbColorStrokeNormal,
+            error: props.uiPbColorError,
+            success: props.uiPbColorSuccess,
+            trail: props.uiPbColorTrail
+        };
+
         return {
             deleteButtonStyle,
             saveButtonStyle,
             errorButtonStyle,
             uiShowPreviewLabel,
             uiShowImagePreviews,
-            uiHideProgressOnComplete
+            uiHideProgressOnComplete,
+            uiProgressBarColors
         };
     }
 

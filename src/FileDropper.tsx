@@ -18,7 +18,7 @@ import { FileDropperFile } from "./store/fileDropperFile";
 
 import { savePostMethod } from "./util/data";
 
-import { UIProps } from "./components/FileList";
+import { UIProps, UIProgressBarColors } from "./components/FileList";
 import { getTexts } from "./util/texts";
 import { validateProps, ValidationMessage, ValidateExtraProps } from "./util/validation";
 
@@ -138,13 +138,21 @@ class FileDropperContainer extends Component<FileDropperContainerProps, {}> {
         const errorButtonStyle =
             uiErrorButtonStyle === "glyphicon" && uiErrorButtonGlyph !== "" ? uiErrorButtonGlyph : null;
 
+        const uiProgressBarColors: UIProgressBarColors = {
+            primary: this.props.uiPbColorStrokeNormal,
+            error: this.props.uiPbColorError,
+            success: this.props.uiPbColorSuccess,
+            trail: this.props.uiPbColorTrail
+        };
+
         const ui: UIProps = {
             deleteButtonStyle,
             saveButtonStyle,
             errorButtonStyle,
             uiShowPreviewLabel,
             uiShowImagePreviews,
-            uiHideProgressOnComplete
+            uiHideProgressOnComplete,
+            uiProgressBarColors
         };
 
         return <FileDropper store={this.store} uiProps={ui} />;

@@ -65,7 +65,12 @@ export interface FileDropperContainerProps extends CommonProps {
     uiErrorButtonGlyph: string;
     uiShowPreviewLabel: boolean;
     uiShowImagePreviews: boolean;
+
     uiHideProgressOnComplete: boolean;
+    uiPbColorStrokeNormal: string;
+    uiPbColorTrail: string;
+    uiPbColorError: string;
+    uiPbColorSuccess: string;
 
     textDropZone: string;
     textDropZoneMaximum: string;

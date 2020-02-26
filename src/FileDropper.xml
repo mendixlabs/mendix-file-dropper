@@ -213,9 +213,27 @@ Note: Only non-persistent entities are accepted.
                     <caption>Show image previews</caption>
                     <description>Show previews of images. The widget will determine by itself, based on the Mime type, whether or not it can show a preview. It does this by analyzing the file and if it determines it is a 'image/*' file, show a base64 encoded version of the image.</description>
                 </property>
+            </propertyGroup>
+            <propertyGroup caption="Progress Bar">
                 <property key="uiHideProgressOnComplete" type="boolean" defaultValue="true">
                     <caption>Hide progress bar on complete</caption>
                     <description>When uploading to Mendix is complete, hide the progress bar</description>
+                </property>
+                <property key="uiPbColorStrokeNormal" type="string" required="true" defaultValue="#2387AA">
+                    <caption>Primary color</caption>
+                    <description>Default is '#2387AA'</description>
+                </property>
+                <property key="uiPbColorTrail" type="string" required="true" defaultValue="#C8F5FF">
+                    <caption>Trail color</caption>
+                    <description>Default is '#C8F5FF'</description>
+                </property>
+                <property key="uiPbColorError" type="string" required="true" defaultValue="#FF0000">
+                    <caption>Error color</caption>
+                    <description>Default is '#FF0000'</description>
+                </property>
+                <property key="uiPbColorSuccess" type="string" required="true" defaultValue="#32A778">
+                    <caption>Success color</caption>
+                    <description>Default is '#32A778'</description>
                 </property>
             </propertyGroup>
         </propertyGroup>

@@ -84,9 +84,12 @@ Verification can be done in two ways:
 
 ### 5. UI
 
-![configuration5](/assets/configuration5.jpg)
+![configuration5](/assets/configuration5.png)
 
 - For various icons you can either use the standard Bootstrap Gylphicon (the classname will be prefixed with `glyphicon glyphicon-`) or a built-in icon.
+- You can switch the type label, previews off
+- You can switch off the progress bar once it has been uploaded.
+- For the progress bar you can set different colors, depending on the status
 
 ### 6. Texts
 

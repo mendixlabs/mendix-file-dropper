@@ -11,6 +11,13 @@ import { IFileDropperFile } from "../store/fileDropperFile";
 import { classes } from "../util/classes";
 import { CancellablePromise } from "mobx/lib/api/flow";
 
+export interface UIProgressBarColors {
+    primary: string;
+    trail: string;
+    error: string;
+    success: string;
+}
+
 export interface UIProps {
     deleteButtonStyle: null | string;
     saveButtonStyle: null | string;
@@ -18,6 +25,7 @@ export interface UIProps {
     uiShowPreviewLabel: boolean;
     uiShowImagePreviews: boolean;
     uiHideProgressOnComplete: boolean;
+    uiProgressBarColors: UIProgressBarColors;
 }
 export interface FileListProps {
     uiProps?: UIProps;
@@ -170,14 +178,27 @@ export class FileList extends Component<FileListProps, {}> {
     }
 
     private renderProgress(file: IFileDropperFile): ReactNode {
-        const strokeColor = file.status === "error" ? "#F00" : "#a5a5a5";
+        const { uiProps } = this.props;
+        const standardColor = "#a5a5a5";
+        const strokeColor =
+            file.status === "error"
+                ? uiProps?.uiProgressBarColors.error || "#F00"
+                : file.status === "saved"
+                ? uiProps?.uiProgressBarColors.success || standardColor
+                : uiProps?.uiProgressBarColors.primary || standardColor;
+        const trailColor = uiProps?.uiProgressBarColors.trail || "a5a5a5";
         const percent = file.status === "error" ? 0 : file.loadProgress;
         if (this.props.uiProps && this.props.uiProps.uiHideProgressOnComplete && file.status === "saved") {
             return null;
         }
         return (
             <div className={classes("item-progress")}>
-                <ProgressLine className={classes("item-progress__bar")} percent={percent} strokeColor={strokeColor} />
+                <ProgressLine
+                    className={classes("item-progress__bar")}
+                    percent={percent}
+                    strokeColor={strokeColor}
+                    trailColor={trailColor}
+                />
                 <div className={classes("item-progress__text")}>{percent}%</div>
             </div>
         );
