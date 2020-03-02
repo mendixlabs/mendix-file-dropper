@@ -6,6 +6,7 @@
 ![GitHub release](https://img.shields.io/github/release/JelteMX/mendix-file-dropper)
 ![GitHub issues](https://img.shields.io/github/issues/JelteMX/mendix-file-dropper)
 [![DeepScan grade](https://deepscan.io/api/teams/7221/projects/9412/branches/122227/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=7221&pid=9412&bid=122227)
+[![Available](https://img.shields.io/badge/Test%20Project-available-green.svg)](https://github.com/JelteMX/widget-test-projects)
 
 # FileDropper
 
