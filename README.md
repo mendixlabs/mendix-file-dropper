@@ -69,7 +69,8 @@ We include the normal **POST** method (default) which will do a request to the M
 
 ### 3. Verification
 
-![configuration3](/assets/configuration3.jpg)
+![configuration3a](/assets/configuration3a.png)
+![configuration3b](/assets/configuration3b.png)
 
 Verification can be done in two ways:
 

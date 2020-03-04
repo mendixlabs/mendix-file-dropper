@@ -81,22 +81,26 @@ Note 2: When using an Entity that is/inherits 'System.Image', Mime types will al
 
         <!-- VERIFICATION -->
 
-        <propertyGroup caption="Verification">
+        <propertyGroup caption="Verification after upload">
             <propertyGroup caption="On File object">
                 <property key="verificationOnAcceptMicroflow" type="microflow" required="false" entityProperty="dataFileEntity">
                     <caption>onAccept Mf</caption>
                     <description>Microflow that will be called to determine if a file is accepted. If not, it should return a false. The Dropzone will remove the file by itself. This microflow will use the entity defined in 'Data'.
 
-Note: This microflow is executed AFTER the file is uploaded. When doing big uploads, it is better to maybe also add a 'beforeAccept Nanoflow'.</description>
+Note: This microflow is executed AFTER the file is uploaded. When doing big uploads, it is better to maybe also add a verification before upload.</description>
                     <returnType type="Boolean" />
                 </property>
             </propertyGroup>
+        </propertyGroup>
+        <propertyGroup caption="Verification before upload">
             <propertyGroup caption="Verification Entity">
                 <property key="verificationEntity" type="entity" required="false" allowNonPersistableEntities="true">
                     <caption>Verification entity</caption>
-                    <description>This entity is used to verify the file BEFORE it is uploaded to the server. The widget will create an object and add the defined attributes. After the 'beforeAccept Microflow/Nanoflow' returns a true (boolean) value, the file itself will be committed and uploaded.
+                    <description>This entity is used to verify the file BEFORE it is uploaded to the server. The widget will create an object and add the defined attributes. After the 'beforeAccept Microflow/Nanoflow' returns an empty string value (this is the error message, empty when no error occurred), the file itself will be committed and uploaded.
 
-Note: Only non-persistent entities are accepted.
+Note 1: Only non-persistent entities are accepted, as the widget will create/delete the object itself.
+Note 2: For this non-persistent entity, when applying Entity Access, give everyone permissions to create/delete this object, and read/write access on any attributes.
+Note 3: To avoid any other problem, make sure this helper object is detached from any other objects. It should be standalone and have zero references to others.
                     </description>
                 </property>
             </propertyGroup>
@@ -124,7 +128,7 @@ Note: Only non-persistent entities are accepted.
                 </property>
                 <property key="verificationSizeAttr" type="attribute" required="false" entityProperty="verificationEntity">
                     <caption>Size attr.</caption>
-                    <description>Szse of the file in bytes.</description>
+                    <description>Size of the file in bytes.</description>
                     <attributeTypes>
                         <attributeType name="Long"/>
                     </attributeTypes>
