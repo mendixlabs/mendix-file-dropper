@@ -235,9 +235,9 @@ Note 3: To avoid any other problem, make sure this helper object is detached fro
                     <caption>Error color</caption>
                     <description>Default is '#FF0000'</description>
                 </property>
-                <property key="uiPbColorSuccess" type="string" required="true" defaultValue="#32A778">
+                <property key="uiPbColorSuccess" type="string" required="true" defaultValue="#0A9B00">
                     <caption>Success color</caption>
-                    <description>Default is '#32A778'</description>
+                    <description>Default is '#0A9B00'</description>
                 </property>
             </propertyGroup>
         </propertyGroup>

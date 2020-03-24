@@ -1,7 +1,7 @@
 {
   "name": "filedropper",
   "widgetName": "FileDropper",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Drop files in your Mendix Application",
   "copyright": "Mendix 2020",
   "author": "Jelte Lagendijk",
