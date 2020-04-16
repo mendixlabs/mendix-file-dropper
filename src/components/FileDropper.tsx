@@ -11,7 +11,7 @@ import { ValidationMessage } from "@jeltemx/mendix-react-widget-utils/lib/valida
 import fileSize from "filesize";
 
 export interface FileDropperProps {
-    uiProps?: UIProps;
+    uiProps: UIProps;
     store: FileDropperStore;
 }
 

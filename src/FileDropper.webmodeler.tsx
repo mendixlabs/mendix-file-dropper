@@ -70,8 +70,10 @@ export class preview extends Component<FileDropperContainerProps> {
             uiSaveButtonStyle,
             uiErrorButtonGlyph,
             uiErrorButtonStyle,
+            uiShowPreview,
             uiShowPreviewLabel,
             uiShowImagePreviews,
+            uiShowFileSize,
             uiHideProgressOnComplete
         } = props;
 
@@ -94,8 +96,10 @@ export class preview extends Component<FileDropperContainerProps> {
             deleteButtonStyle,
             saveButtonStyle,
             errorButtonStyle,
+            uiShowPreview,
             uiShowPreviewLabel,
             uiShowImagePreviews,
+            uiShowFileSize,
             uiHideProgressOnComplete,
             uiProgressBarColors,
             uiDeleteFileText

@@ -22,14 +22,16 @@ export interface UIProps {
     deleteButtonStyle: null | string;
     saveButtonStyle: null | string;
     errorButtonStyle: null | string;
+    uiShowPreview: boolean;
     uiShowPreviewLabel: boolean;
     uiShowImagePreviews: boolean;
+    uiShowFileSize: boolean;
     uiHideProgressOnComplete: boolean;
     uiProgressBarColors: UIProgressBarColors;
     uiDeleteFileText: string;
 }
 export interface FileListProps {
-    uiProps?: UIProps;
+    uiProps: UIProps;
     files: IFileDropperFile[];
     contextObject?: mendix.lib.MxObject | null;
     deleteFile?: (file: IFileDropperFile) => CancellablePromise<void>;
@@ -42,6 +44,7 @@ export class FileList extends Component<FileListProps, {}> {
 
         this.renderDeleteButton = this.renderDeleteButton.bind(this);
         this.renderProgress = this.renderProgress.bind(this);
+        this.renderFileSize = this.renderFileSize.bind(this);
     }
 
     render(): ReactNode {
@@ -60,17 +63,20 @@ export class FileList extends Component<FileListProps, {}> {
     }
 
     private renderFile(file: IFileDropperFile, index: number): ReactNode {
-        const size: string | null = file.file && file.file.size ? fileSize(file.file.size) : null;
+        const { uiShowPreview, uiShowFileSize, uiHideProgressOnComplete } = this.props.uiProps;
         const type = this.getFileExtension(file);
+        const itemClassNames = classes("item", { type, state: file.status }, [
+            uiShowPreview ? "" : "no-preview",
+            uiShowFileSize ? "" : "no-filesize",
+            uiHideProgressOnComplete ? "" : "hide-on-complete",
+            file.status
+        ]);
         return (
-            <li className={classes("item", { type, state: file.status })} key={`${file.name}-${index}`}>
+            <li className={itemClassNames} key={`${file.name}-${index}`}>
                 {this.renderPreview(file)}
                 <div className={classes("item-info")}>
                     <div className={classes("item-name")}>{file.name}</div>
-                    <div className={classes("item-filesize")}>
-                        <div className={classes("item-filesize__label")}>Size:</div>
-                        <div className={classes("item-filesize__value")}>{size !== null ? size : "unknown"}</div>
-                    </div>
+                    {this.renderFileSize(file)}
                     {this.renderProgress(file)}
                 </div>
                 <div className={classes("button-zone")}>
@@ -88,14 +94,14 @@ export class FileList extends Component<FileListProps, {}> {
         if (file.status !== "not_loaded") {
             return null;
         }
-        const { uiProps } = this.props;
+        const { saveButtonStyle } = this.props.uiProps;
         const action: () => void = () => {
             if (file.loadFile) {
                 file.loadFile.call(file);
             }
         };
-        return uiProps && uiProps.saveButtonStyle !== null ? (
-            this.renderGlyph(uiProps.saveButtonStyle, action)
+        return saveButtonStyle !== null ? (
+            this.renderGlyph(saveButtonStyle, action)
         ) : (
             <FaRegArrowAltCircleUp className={classes("button-zone__button")} onClick={action} />
         );
@@ -105,14 +111,14 @@ export class FileList extends Component<FileListProps, {}> {
         if (file.status !== "loaded") {
             return null;
         }
-        const { uiProps } = this.props;
+        const { saveButtonStyle } = this.props.uiProps;
         const action: () => void = () => {
             if (file.saveFile) {
                 file.saveFile.call(file);
             }
         };
-        return uiProps && uiProps.saveButtonStyle !== null ? (
-            this.renderGlyph(uiProps.saveButtonStyle, action)
+        return saveButtonStyle !== null ? (
+            this.renderGlyph(saveButtonStyle, action)
         ) : (
             <FaRegArrowAltCircleUp className={classes("button-zone__button")} onClick={action} />
         );
@@ -120,6 +126,7 @@ export class FileList extends Component<FileListProps, {}> {
 
     private renderDeleteButton(file: IFileDropperFile): ReactNode {
         const { uiProps, deleteFile } = this.props;
+        const { uiDeleteFileText, deleteButtonStyle } = uiProps;
         if (
             !(file.status === "loaded" || file.status === "saved" || file.status === "error") ||
             typeof deleteFile === "undefined"
@@ -127,9 +134,9 @@ export class FileList extends Component<FileListProps, {}> {
             return null;
         }
         const action: () => void = () => {
-            if (file.status === "saved" && this.props.uiProps && this.props.uiProps.uiDeleteFileText) {
+            if (file.status === "saved" && uiDeleteFileText) {
                 mx.ui.confirmation({
-                    content: this.props.uiProps.uiDeleteFileText,
+                    content: uiDeleteFileText,
                     proceed: "OK",
                     cancel: "Cancel",
                     handler: () => {
@@ -140,8 +147,8 @@ export class FileList extends Component<FileListProps, {}> {
                 deleteFile(file);
             }
         };
-        return uiProps && uiProps.deleteButtonStyle !== null ? (
-            this.renderGlyph(uiProps.deleteButtonStyle, action)
+        return deleteButtonStyle !== null ? (
+            this.renderGlyph(deleteButtonStyle, action)
         ) : (
             <FaRegTimesCircle className={classes("button-zone__button")} onClick={action} />
         );
@@ -156,11 +163,26 @@ export class FileList extends Component<FileListProps, {}> {
         );
     }
 
+    private renderFileSize(file: IFileDropperFile): ReactNode {
+        if (!this.props.uiProps.uiShowFileSize) {
+            return null;
+        }
+        const size: string | null = file.file && file.file.size ? fileSize(file.file.size) : null;
+        return (
+            <div className={classes("item-filesize")}>
+                <div className={classes("item-filesize__label")}>Size:</div>
+                <div className={classes("item-filesize__value")}>{size !== null ? size : "unknown"}</div>
+            </div>
+        );
+    }
+
     private renderPreview(file: IFileDropperFile): ReactNode {
-        const { uiProps } = this.props;
-        const showPreview = typeof uiProps === "undefined" || uiProps.uiShowImagePreviews;
+        const { uiShowPreview, uiShowImagePreviews } = this.props.uiProps;
+        if (!uiShowPreview) {
+            return null;
+        }
         const type = this.getFileExtension(file);
-        if (!showPreview || !file || file.base64 === null || this.getFileClass(file) !== "image") {
+        if (!uiShowImagePreviews || !file || file.base64 === null || this.getFileClass(file) !== "image") {
             return (
                 <div className={classes("preview", { type })}>
                     <TiDocument className={classes("preview__img", { icon: true })} />
@@ -190,17 +212,17 @@ export class FileList extends Component<FileListProps, {}> {
     }
 
     private renderProgress(file: IFileDropperFile): ReactNode {
-        const { uiProps } = this.props;
+        const { uiProgressBarColors } = this.props.uiProps;
         const standardColor = "#a5a5a5";
         const strokeColor =
             file.status === "error"
-                ? uiProps?.uiProgressBarColors.error || "#F00"
+                ? uiProgressBarColors.error || "#F00"
                 : file.status === "saved"
-                ? uiProps?.uiProgressBarColors.success || standardColor
-                : uiProps?.uiProgressBarColors.primary || standardColor;
-        const trailColor = uiProps?.uiProgressBarColors.trail || "a5a5a5";
+                ? uiProgressBarColors.success || standardColor
+                : uiProgressBarColors.primary || standardColor;
+        const trailColor = uiProgressBarColors.trail || "a5a5a5";
         const percent = file.status === "error" ? 0 : file.loadProgress;
-        if (this.props.uiProps && this.props.uiProps.uiHideProgressOnComplete && file.status === "saved") {
+        if (this.props.uiProps.uiHideProgressOnComplete && file.status === "saved") {
             return null;
         }
         return (
@@ -227,9 +249,9 @@ export class FileList extends Component<FileListProps, {}> {
         if (file.status !== "error") {
             return null;
         }
-        const { uiProps } = this.props;
-        return uiProps && uiProps.errorButtonStyle !== null ? (
-            this.renderGlyph(uiProps.errorButtonStyle, () => {}, { type: "error" })
+        const { errorButtonStyle } = this.props.uiProps;
+        return errorButtonStyle !== null ? (
+            this.renderGlyph(errorButtonStyle, () => {}, { type: "error" })
         ) : (
             <FaExclamationTriangle className={classes("button-zone__button", { type: "error" })} />
         );
