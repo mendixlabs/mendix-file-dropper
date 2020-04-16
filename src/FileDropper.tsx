@@ -20,7 +20,8 @@ import { savePostMethod } from "./util/data";
 
 import { UIProps, UIProgressBarColors } from "./components/FileList";
 import { getTexts } from "./util/texts";
-import { validateProps, ValidationMessage, ValidateExtraProps } from "./util/validation";
+import { validateProps, ValidateExtraProps } from "./util/validation";
+import { ValidationMessage } from "@jeltemx/mendix-react-widget-utils/lib/validation";
 
 import "./ui/FileDropper.scss";
 
@@ -126,8 +127,10 @@ class FileDropperContainer extends Component<FileDropperContainerProps, {}> {
             uiSaveButtonStyle,
             uiErrorButtonGlyph,
             uiErrorButtonStyle,
+            uiShowPreview,
             uiShowPreviewLabel,
             uiShowImagePreviews,
+            uiShowFileSize,
             uiHideProgressOnComplete
         } = this.props;
 
@@ -144,15 +147,19 @@ class FileDropperContainer extends Component<FileDropperContainerProps, {}> {
             success: this.props.uiPbColorSuccess,
             trail: this.props.uiPbColorTrail
         };
+        const uiDeleteFileText = this.props.textDeleteFileConfirm;
 
         const ui: UIProps = {
             deleteButtonStyle,
             saveButtonStyle,
             errorButtonStyle,
+            uiShowPreview,
             uiShowPreviewLabel,
             uiShowImagePreviews,
+            uiShowFileSize,
             uiHideProgressOnComplete,
-            uiProgressBarColors
+            uiProgressBarColors,
+            uiDeleteFileText
         };
 
         return <FileDropper store={this.store} uiProps={ui} />;

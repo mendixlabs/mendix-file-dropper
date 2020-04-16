@@ -78,7 +78,7 @@ const customConfig = {
         alias: {
             "react-icons/fa": path.join(__dirname, "node_modules/react-icons/fa/index.esm"),
             "react-icons/ti": path.join(__dirname, "node_modules/react-icons/ti/index.esm"),
-            "filesize": path.join(__dirname, "node_modules/filesize/lib/filesize.esm.js")
+            //"filesize": path.join(__dirname, "node_modules/filesize/lib/filesize.esm.js")
         }
     }
 };
@@ -102,7 +102,7 @@ const previewConfig = {
         alias: {
             "react-icons/fa": path.join(__dirname, "node_modules/react-icons/fa/index.esm"),
             "react-icons/ti": path.join(__dirname, "node_modules/react-icons/ti/index.esm"),
-            "filesize": path.join(__dirname, "node_modules/filesize/lib/filesize.esm.js")
+            //"filesize": path.join(__dirname, "node_modules/filesize/lib/filesize.esm.js")
         }
     },
     externals: [

@@ -209,6 +209,10 @@ Note 3: To avoid any other problem, make sure this helper object is detached fro
                 </property>
             </propertyGroup>
             <propertyGroup caption="Other">
+                <property key="uiShowPreview" type="boolean" defaultValue="true">
+                    <caption>Show preview</caption>
+                    <description>Show preview block on left side.</description>
+                </property>
                 <property key="uiShowPreviewLabel" type="boolean" defaultValue="false">
                     <caption>Show type label</caption>
                     <description>Show the type label in the previews</description>
@@ -216,6 +220,10 @@ Note 3: To avoid any other problem, make sure this helper object is detached fro
                 <property key="uiShowImagePreviews" type="boolean" defaultValue="true">
                     <caption>Show image previews</caption>
                     <description>Show previews of images. The widget will determine by itself, based on the Mime type, whether or not it can show a preview. It does this by analyzing the file and if it determines it is a 'image/*' file, show a base64 encoded version of the image.</description>
+                </property>
+                <property key="uiShowFileSize" type="boolean" defaultValue="true">
+                    <caption>Show file size label</caption>
+                    <description />
                 </property>
             </propertyGroup>
             <propertyGroup caption="Progress Bar">
@@ -261,6 +269,15 @@ Note 3: To avoid any other problem, make sure this helper object is detached fro
                     <translation lang="en_US">Maximum amount of files reached, please consider removing files</translation>
                     <translation lang="en_GB">Maximum amount of files reached, please consider removing files</translation>
                     <translation lang="nl_NL">Maximum amount of files reached, please consider removing files</translation>
+                </translations>
+            </property>
+            <property key="textDeleteFileConfirm" type="translatableString" required="false">
+                <caption>Delete</caption>
+                <description>Confirmation message when deleting a file. If you leave this empty, confirmation is disabled.</description>
+                <translations>
+                    <translation lang="en_US">Are you sure you want to delete this file? This cannot be undone.</translation>
+                    <translation lang="en_GB">Are you sure you want to delete this file? This cannot be undone.</translation>
+                    <translation lang="nl_NL">Are you sure you want to delete this file? This cannot be undone.</translation>
                 </translations>
             </property>
         </propertyGroup>

@@ -1,6 +1,6 @@
 import { observable, action, flow, configure, computed } from "mobx";
 import { FileDropperTexts } from "../util/texts";
-import { ValidationMessage } from "../util/validation";
+import { ValidationMessage } from "@jeltemx/mendix-react-widget-utils/lib/validation";
 import { IFileDropperFile, FileDropperFile } from "./fileDropperFile";
 
 configure({ enforceActions: "observed" });

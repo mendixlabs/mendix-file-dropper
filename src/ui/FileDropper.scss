@@ -142,6 +142,16 @@
                 line-height: 1em;
             }
         }
+        &--state {
+            &_saved {
+                &.no-preview.no-filesize {
+                    height: 4em;
+                    .filedropper__item-info {
+                        height: 2em;
+                    }
+                }
+            }
+        }
     }
 
     &__button-zone {

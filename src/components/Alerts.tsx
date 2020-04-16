@@ -1,6 +1,6 @@
 import { Component, ReactNode, createElement } from "react";
 import { classes } from "../util/classes";
-import { ValidationMessage } from "../util/validation";
+import { ValidationMessage } from "@jeltemx/mendix-react-widget-utils/lib/validation";
 import { observer } from "mobx-react";
 
 type TypeBootstrapStyle = "default" | "primary" | "success" | "info" | "inverse" | "warning" | "danger";

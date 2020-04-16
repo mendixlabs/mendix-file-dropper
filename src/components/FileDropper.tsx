@@ -7,11 +7,11 @@ import { FileDropperStore } from "../store/fileDropperStore";
 import { FileList, UIProps } from "./FileList";
 import { FileDropZone } from "./FileDropZone";
 import { Alerts } from "./Alerts";
-import { ValidationMessage } from "../util/validation";
+import { ValidationMessage } from "@jeltemx/mendix-react-widget-utils/lib/validation";
 import fileSize from "filesize";
 
 export interface FileDropperProps {
-    uiProps?: UIProps;
+    uiProps: UIProps;
     store: FileDropperStore;
 }
 

@@ -1,8 +1,3 @@
-/**
- * This file was generated from FileDropper.xml
- * WARNING: All changes made to this file will be overwritten
- * @author Mendix Widgets Team
- */
 import { CSSProperties } from "react";
 
 interface CommonProps {
@@ -63,8 +58,11 @@ export interface FileDropperContainerProps extends CommonProps {
     uiSaveButtonGlyph: string;
     uiErrorButtonStyle: TypeButtonStyle;
     uiErrorButtonGlyph: string;
-    uiShowPreviewLabel: boolean;
+
+    uiShowPreview: boolean;
     uiShowImagePreviews: boolean;
+    uiShowPreviewLabel: boolean;
+    uiShowFileSize: boolean;
 
     uiHideProgressOnComplete: boolean;
     uiPbColorStrokeNormal: string;
@@ -74,4 +72,5 @@ export interface FileDropperContainerProps extends CommonProps {
 
     textDropZone: string;
     textDropZoneMaximum: string;
+    textDeleteFileConfirm: string;
 }
