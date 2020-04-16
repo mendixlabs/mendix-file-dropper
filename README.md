@@ -29,6 +29,7 @@ Show this dropzone:
 - Show/hide labels & image previews
 
 > Widget size: ~180Kb, which is ~52Kb Gzipped online
+> Test project can be downloaded [here](https://github.com/JelteMX/widget-test-projects#file-dropper)
 
 ## Compatibility
 
@@ -51,7 +52,7 @@ Only works in Mendix 8.0.0 and upwards. This widget was created using MobX, whic
 
 ### 1. Data
 
-![configuration1](/assets/configuration1.jpg)
+![configuration1](/assets/configuration1.png)
 
 - Select and Entity that is (or extends) a `System.FileDocument` (`System.Image` also works)
 - **Name** attribute is required, others are not
@@ -62,7 +63,7 @@ We include the normal **POST** method (default) which will do a request to the M
 
 ### 2. Restrictions
 
-![configuration2](/assets/configuration2.jpg)
+![configuration2](/assets/configuration2.png)
 
 - Max file size can be set to 0 to have no restrictions. This is always in Mb (1024 * 1024 bytes)
 - Max files can be set to 0 to have no restrictions. If it is set to 1, the dropzone (which is clickable) will also restrict the amount of files you can select in the file dialog
@@ -80,7 +81,7 @@ Verification can be done in two ways:
 
 ### 4. Events
 
-![configuration4](/assets/configuration4.jpg)
+![configuration4](/assets/configuration4.png)
 
 - This microflow/nanoflow (can be used both) will be executed after a succesful upload. It will send the file object itself as an input parameter
 
@@ -97,9 +98,10 @@ Verification can be done in two ways:
 
 ### 6. Texts
 
-![configuration6](/assets/configuration6.jpg)
+![configuration6](/assets/configuration6.png)
 
 - Various texts can be configured. These are actually translatable strings, so the can be translated in Mendix based on the locale.
+- You can switch off the Confirmation dialog by leaving the Delete text empty
 
 ## Demo project
 
