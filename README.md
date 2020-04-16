@@ -89,8 +89,10 @@ Verification can be done in two ways:
 ![configuration5](/assets/configuration5.png)
 
 - For various icons you can either use the standard Bootstrap Gylphicon (the classname will be prefixed with `glyphicon glyphicon-`) or a built-in icon.
+- You can switch the preview off entirely
 - You can switch the type label, previews off
 - You can switch off the progress bar once it has been uploaded.
+- You can switch off the filesize info
 - For the progress bar you can set different colors, depending on the status
 
 ### 6. Texts
@@ -121,7 +123,6 @@ TBD...
 - Add e2e tests
 - Replace progress bar with proper div so it works in Edge
 - Add styling properties (class prefixes etc), replace some BEM
-- Make document icon optional
 
 ## IDEAS
 
