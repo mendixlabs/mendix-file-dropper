@@ -145,6 +145,7 @@ class FileDropperContainer extends Component<FileDropperContainerProps, {}> {
             success: this.props.uiPbColorSuccess,
             trail: this.props.uiPbColorTrail
         };
+        const uiDeleteFileText = this.props.textDeleteFileConfirm;
 
         const ui: UIProps = {
             deleteButtonStyle,
@@ -153,7 +154,8 @@ class FileDropperContainer extends Component<FileDropperContainerProps, {}> {
             uiShowPreviewLabel,
             uiShowImagePreviews,
             uiHideProgressOnComplete,
-            uiProgressBarColors
+            uiProgressBarColors,
+            uiDeleteFileText
         };
 
         return <FileDropper store={this.store} uiProps={ui} />;

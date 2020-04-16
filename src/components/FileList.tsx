@@ -26,6 +26,7 @@ export interface UIProps {
     uiShowImagePreviews: boolean;
     uiHideProgressOnComplete: boolean;
     uiProgressBarColors: UIProgressBarColors;
+    uiDeleteFileText: string;
 }
 export interface FileListProps {
     uiProps?: UIProps;
@@ -126,7 +127,18 @@ export class FileList extends Component<FileListProps, {}> {
             return null;
         }
         const action: () => void = () => {
-            deleteFile(file);
+            if (file.status === "saved" && this.props.uiProps && this.props.uiProps.uiDeleteFileText) {
+                mx.ui.confirmation({
+                    content: this.props.uiProps.uiDeleteFileText,
+                    proceed: "OK",
+                    cancel: "Cancel",
+                    handler: () => {
+                        deleteFile(file);
+                    }
+                });
+            } else {
+                deleteFile(file);
+            }
         };
         return uiProps && uiProps.deleteButtonStyle !== null ? (
             this.renderGlyph(uiProps.deleteButtonStyle, action)

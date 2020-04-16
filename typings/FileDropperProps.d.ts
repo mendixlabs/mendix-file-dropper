@@ -1,8 +1,3 @@
-/**
- * This file was generated from FileDropper.xml
- * WARNING: All changes made to this file will be overwritten
- * @author Mendix Widgets Team
- */
 import { CSSProperties } from "react";
 
 interface CommonProps {
@@ -74,4 +69,5 @@ export interface FileDropperContainerProps extends CommonProps {
 
     textDropZone: string;
     textDropZoneMaximum: string;
+    textDeleteFileConfirm: string;
 }

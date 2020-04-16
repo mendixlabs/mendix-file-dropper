@@ -88,6 +88,7 @@ export class preview extends Component<FileDropperContainerProps> {
             success: props.uiPbColorSuccess,
             trail: props.uiPbColorTrail
         };
+        const uiDeleteFileText = this.props.textDeleteFileConfirm;
 
         return {
             deleteButtonStyle,
@@ -96,7 +97,8 @@ export class preview extends Component<FileDropperContainerProps> {
             uiShowPreviewLabel,
             uiShowImagePreviews,
             uiHideProgressOnComplete,
-            uiProgressBarColors
+            uiProgressBarColors,
+            uiDeleteFileText
         };
     }
 
