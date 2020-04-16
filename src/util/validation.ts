@@ -1,25 +1,11 @@
 import { FileDropperContainerProps } from "../../typings/FileDropperProps";
-import uuid from "uuid/v4";
+import { ValidationMessage } from "@jeltemx/mendix-react-widget-utils/lib/validation";
 
 export type TypeValidationSeverity = "fatal" | "warning";
 
 export interface ValidateExtraProps {
     noFileSystemDocument?: boolean;
     noPersistentVerification?: boolean;
-}
-
-export class ValidationMessage {
-    public id: string;
-    public message: string;
-    public dismissable: boolean;
-    public fatal: boolean;
-
-    constructor(message: string, type: TypeValidationSeverity = "fatal") {
-        this.id = uuid();
-        this.message = message;
-        this.dismissable = type !== "fatal";
-        this.fatal = type === "fatal";
-    }
 }
 
 export const validateProps = (
@@ -30,6 +16,13 @@ export const validateProps = (
     const addValidation = (msg: string): void => {
         messages.push(new ValidationMessage(msg));
     };
+    const conditionalValidation = (condition: boolean, category: string, msg: string): void => {
+        if (condition) {
+            messages.push(new ValidationMessage(`[${category}] :: ${msg}`));
+        }
+    };
+    const glyphIconError = (button: string) =>
+        `${button} button style is set to 'Glyphicon', but class is empty. Either set the class or use the built-in icon`;
 
     if (extraProps.noFileSystemDocument) {
         addValidation("[Data] :: Configured entity is not of type 'System.FileDocument'! Widget disabled");
@@ -39,31 +32,30 @@ export const validateProps = (
         addValidation("[Verification] :: Verification entity can only be a non-persistable entity");
     }
 
-    if (props.uiDeleteButtonStyle === "glyphicon" && props.uiDeleteButtonGlyph === "") {
-        addValidation(
-            "[UI] :: Delete button style is set to 'Glyphicon', but class is empty. Either set the class or use the built-in icon"
-        );
-    }
+    conditionalValidation(
+        props.uiDeleteButtonStyle === "glyphicon" && props.uiDeleteButtonGlyph === "",
+        "UI",
+        glyphIconError("Delete")
+    );
 
-    if (props.uiSaveButtonStyle === "glyphicon" && props.uiSaveButtonGlyph === "") {
-        addValidation(
-            "[UI] :: Save button style is set to 'Glyphicon', but class is empty. Either set the class or use the built-in icon"
-        );
-    }
+    conditionalValidation(
+        props.uiSaveButtonStyle === "glyphicon" && props.uiSaveButtonGlyph === "",
+        "UI",
+        glyphIconError("Save")
+    );
 
-    if (props.uiErrorButtonStyle === "glyphicon" && props.uiErrorButtonGlyph === "") {
-        addValidation(
-            "[UI] :: Error button style is set to 'Glyphicon', but class is empty. Either set the class or use the built-in icon"
-        );
-    }
+    conditionalValidation(
+        props.uiErrorButtonStyle === "glyphicon" && props.uiErrorButtonGlyph === "",
+        "UI",
+        glyphIconError("Error")
+    );
 
-    if (
+    conditionalValidation(
         props.verificationBeforeAcceptMicroflow !== "" &&
-        props.verificationBeforeAcceptNanoflow &&
-        props.verificationBeforeAcceptNanoflow.nanoflow
-    ) {
-        addValidation("[Verification] :: Only select a microflow OR nanoflow for verification, not both");
-    }
+            !!(props.verificationBeforeAcceptNanoflow && props.verificationBeforeAcceptNanoflow.nanoflow),
+        "Verification",
+        "Only select a microflow OR nanoflow for verification, not both"
+    );
 
     return messages;
 };

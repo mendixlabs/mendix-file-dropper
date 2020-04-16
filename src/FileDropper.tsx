@@ -20,7 +20,8 @@ import { savePostMethod } from "./util/data";
 
 import { UIProps, UIProgressBarColors } from "./components/FileList";
 import { getTexts } from "./util/texts";
-import { validateProps, ValidationMessage, ValidateExtraProps } from "./util/validation";
+import { validateProps, ValidateExtraProps } from "./util/validation";
+import { ValidationMessage } from "@jeltemx/mendix-react-widget-utils/lib/validation";
 
 import "./ui/FileDropper.scss";
 
