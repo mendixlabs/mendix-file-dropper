@@ -121,6 +121,7 @@ class FileDropperContainer extends Component<FileDropperContainerProps, {}> {
 
     render(): ReactNode {
         const {
+            class: mainClasses,
             uiDeleteButtonGlyph,
             uiDeleteButtonStyle,
             uiSaveButtonGlyph,
@@ -150,6 +151,7 @@ class FileDropperContainer extends Component<FileDropperContainerProps, {}> {
         const uiDeleteFileText = this.props.textDeleteFileConfirm;
 
         const ui: UIProps = {
+            mainClasses,
             deleteButtonStyle,
             saveButtonStyle,
             errorButtonStyle,

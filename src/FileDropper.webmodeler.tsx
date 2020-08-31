@@ -64,6 +64,7 @@ export class preview extends Component<FileDropperContainerProps> {
 
     private getUIProps(props: FileDropperContainerProps): UIProps {
         const {
+            class: mainClasses,
             uiDeleteButtonGlyph,
             uiDeleteButtonStyle,
             uiSaveButtonGlyph,
@@ -93,6 +94,7 @@ export class preview extends Component<FileDropperContainerProps> {
         const uiDeleteFileText = this.props.textDeleteFileConfirm;
 
         return {
+            mainClasses,
             deleteButtonStyle,
             saveButtonStyle,
             errorButtonStyle,

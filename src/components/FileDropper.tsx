@@ -1,7 +1,7 @@
 import { Component, ReactNode, createElement } from "react";
 import { observer } from "mobx-react";
+import classNames from "classnames";
 
-import { classes } from "../util/classes";
 import { FileDropperStore } from "../store/fileDropperStore";
 
 import { FileList, UIProps } from "./FileList";
@@ -40,7 +40,7 @@ export class FileDropper extends Component<FileDropperProps, {}> {
         const deleteAction = deleteFile.bind(store);
 
         return (
-            <div className={classes()}>
+            <div className={classNames("filedropper", uiProps.mainClasses)}>
                 <FileDropZone
                     onDrop={this.onDrop}
                     accept={accept}

@@ -19,6 +19,7 @@ export interface UIProgressBarColors {
 }
 
 export interface UIProps {
+    mainClasses: null | string;
     deleteButtonStyle: null | string;
     saveButtonStyle: null | string;
     errorButtonStyle: null | string;
