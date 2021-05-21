@@ -1,6 +1,5 @@
-import { Component, ReactNode, createElement } from "react";
+import { Component, ReactNode, createElement, createRef } from "react";
 import { findDOMNode } from "react-dom";
-import { hot } from "react-hot-loader/root";
 import mime from "mime";
 import {
     createObject,
@@ -8,7 +7,7 @@ import {
     commitObject,
     getObject
 } from "@jeltemx/mendix-react-widget-utils/lib/objects";
-import { entityIsFileDocument, entityIsImage, entityIsPersistable } from "@jeltemx/mendix-react-widget-utils";
+import { debug, entityIsFileDocument, entityIsImage, entityIsPersistable } from "@jeltemx/mendix-react-widget-utils";
 import { saveDocument } from "@jeltemx/mendix-react-widget-utils/lib/documents";
 
 import { FileDropper } from "./components/FileDropper";
@@ -31,6 +30,8 @@ export interface Action {
 }
 
 class FileDropperContainer extends Component<FileDropperContainerProps, {}> {
+    ref = createRef<HTMLDivElement>();
+
     store: FileDropperStore;
     private widgetId?: string;
     private subscriptionHandles: number[] = [];
@@ -107,10 +108,17 @@ class FileDropperContainer extends Component<FileDropperContainerProps, {}> {
     }
 
     componentWillReceiveProps(nextProps: FileDropperContainerProps): void {
-        if (!this.widgetId) {
-            const domNode = findDOMNode(this);
-            // @ts-ignore
-            this.widgetId = domNode.getAttribute("widgetId") || undefined;
+        if (!this.widgetId && this.ref.current) {
+            try {
+                const domNode = findDOMNode(this);
+                // @ts-ignore
+                this.widgetId = domNode.getAttribute("widgetId") || undefined;
+            } catch (error) {
+                const domNode = findDOMNode(this.ref.current);
+                // @ts-ignore
+                const alternativeID = domNode.getAttribute("data-mendix-id") || undefined;
+                this.widgetId = alternativeID;
+            }
         }
         this.store.setContext(nextProps.mxObject || null);
     }
@@ -164,7 +172,11 @@ class FileDropperContainer extends Component<FileDropperContainerProps, {}> {
             uiDeleteFileText
         };
 
-        return <FileDropper store={this.store} uiProps={ui} />;
+        return (
+            <div ref={this.ref}>
+                <FileDropper store={this.store} uiProps={ui} />
+            </div>
+        );
     }
 
     async saveFile(file: FileDropperFile): Promise<boolean> {
@@ -432,11 +444,9 @@ class FileDropperContainer extends Component<FileDropperContainerProps, {}> {
     }
 
     private debug(...args: any): void {
-        const id = this.props.friendlyId || this.widgetId;
-        if (window.logger) {
-            window.logger.debug(`${id}:`, ...args);
-        }
+        const id = this.props.friendlyId || this.widgetId || "mendix.filedropper.FileDropper";
+        debug(id, ...args);
     }
 }
 
-export default hot(FileDropperContainer);
+export default FileDropperContainer;
