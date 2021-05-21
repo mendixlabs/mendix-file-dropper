@@ -49,7 +49,7 @@
   "dependencies": {
     "@bem-react/classname": "^1.5.8",
     "@jeltemx/mendix-react-widget-utils": "^0.9.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "classnames": "^2.2.6",
     "core-js": "^3.6.5",
     "filesize": "^6.1.0",
