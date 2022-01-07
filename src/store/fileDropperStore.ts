@@ -34,7 +34,6 @@ export class FileDropperStore implements FileDropperStoreProps {
     public accept: string | undefined;
     public maxNumber: number;
     public maxSize: number | undefined;
-    public texts: FileDropperTexts;
 
     public saveMethod: ((file: IFileDropperFile) => Promise<boolean>) | null;
     public deleteMethod: ((file: IFileDropperFile) => Promise<boolean>) | null;
@@ -48,6 +47,7 @@ export class FileDropperStore implements FileDropperStoreProps {
     @observable public contextObject: mendix.lib.MxObject | null;
     @observable public validationMessages: ValidationMessage[] = [];
     @observable public files: IFileDropperFile[] = [];
+    @observable public texts: FileDropperTexts;
 
     saveFile = flow(function*(this: FileDropperStore, file: IFileDropperFile) {
         if (file.loadFile && (this.autoSave || this.autoLoad)) {
