@@ -57,7 +57,7 @@ export class FileDropperFile implements IFileDropperFile {
                 this.status = "error";
             }
             // @ts-ignore
-        } catch (error: any) {
+        } catch (error) {
             this.error = error;
             this.status = error;
         }
@@ -82,7 +82,7 @@ export class FileDropperFile implements IFileDropperFile {
                 this.hash = md5(base64);
             }
             // @ts-ignore
-        } catch (error: any) {
+        } catch (error) {
             this.status = "error";
             this.error = error.message || "unknown error";
             this.data = this.base64 = null;

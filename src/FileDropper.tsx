@@ -321,13 +321,12 @@ class FileDropperContainer extends Component<FileDropperContainerProps, {}> {
                     | undefined;
 
                 if (typeof verifyError !== "undefined" && verifyError !== "" && verifyError !== null) {
-                    const errorText = this.store.texts.FILESREJECTEDBYSERVER
-                        .replace(/%%FILENAME%%/g, file.name)
-                        .replace(/%%ERROR%%/g, verifyError);
+                    const errorText = this.store.texts.FILESREJECTEDBYSERVER.replace(
+                        /%%FILENAME%%/g,
+                        file.name
+                    ).replace(/%%ERROR%%/g, verifyError);
 
-                    this.store.addValidationMessage(
-                        new ValidationMessage(errorText, "warning")
-                    );
+                    this.store.addValidationMessage(new ValidationMessage(errorText, "warning"));
                     this.store.deleteFile(file);
                     return false;
                 }

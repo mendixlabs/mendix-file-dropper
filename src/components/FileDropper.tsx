@@ -72,14 +72,12 @@ export class FileDropper extends Component<FileDropperProps, {}> {
             const otherRejected: File[] = [];
             fileRejections.forEach(reject => {
                 if (maxSize !== null && reject && reject.file.size && reject.file.size > maxSize) {
-                    const text = FILERECTEDSIZE
-                        .replace(/%%FILENAME%%/g, reject.file.name)
-                        .replace(/%%MAXSIZE%%/g, fileSize(maxSize));
-
-                    const message = new ValidationMessage(
-                        text,
-                        "warning"
+                    const text = FILERECTEDSIZE.replace(/%%FILENAME%%/g, reject.file.name).replace(
+                        /%%MAXSIZE%%/g,
+                        fileSize(maxSize)
                     );
+
+                    const message = new ValidationMessage(text, "warning");
                     store.addValidationMessage(message);
                 } else {
                     otherRejected.push(reject.file);
@@ -87,10 +85,7 @@ export class FileDropper extends Component<FileDropperProps, {}> {
             });
 
             if (otherRejected.length > 0) {
-                mx.ui.info(
-                    [FILESREJECTED, "", ...otherRejected.map(file => file.name)].join("\n"),
-                    true
-                );
+                mx.ui.info([FILESREJECTED, "", ...otherRejected.map(file => file.name)].join("\n"), true);
             }
         }
 
