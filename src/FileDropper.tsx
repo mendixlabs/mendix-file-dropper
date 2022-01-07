@@ -95,7 +95,8 @@ class FileDropperContainer extends Component<FileDropperContainerProps, {}> {
             validationMessages,
             accept,
             texts,
-            saveBase64: props.uiShowImagePreviews
+            saveBase64: props.uiShowImagePreviews,
+            contextObject: props.mxObject
         });
     }
 
