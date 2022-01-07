@@ -151,16 +151,30 @@ Note 3: To avoid any other problem, make sure this helper object is detached fro
         <!-- EVENTS -->
 
         <propertyGroup caption="Events">
-            <property key="eventsAfterCommitMf" type="microflow" required="false" entityProperty="dataFileEntity">
-                <caption>After commit microflow</caption>
-                <description>After the file is succesfully committed, this microflow can be executed</description>
-                <returnType type="Void" />
-            </property>
-            <property key="eventsAfterCommitNf" type="nanoflow" required="false" entityProperty="dataFileEntity">
-                <caption>After commit nanoflow</caption>
-                <description>After the file is succesfully committed, this nanoflow can be executed</description>
-                <returnType type="Void" />
-            </property>
+            <propertyGroup caption="Before commit">
+                <property key="eventsBeforeCommitMf" type="microflow" required="false">
+                    <caption>Before commit microflow</caption>
+                    <description>Before committing any file, run this microflow. This can be used to verify the context object (needs to be committed before you can commit any file you associate with). It should return a boolean with True before it commits the files</description>
+                    <returnType type="Boolean" />
+                </property>
+                <property key="eventsBeforeCommitNf" type="nanoflow" required="false">
+                    <caption>Before commit nanoflow</caption>
+                    <description>Before committing any file, run this nanoflow. This can be used to verify the context object (needs to be committed before you can commit any file you associate with). It should return a boolean with True before it commits the files</description>
+                    <returnType type="Boolean" />
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="After commit">
+                <property key="eventsAfterCommitMf" type="microflow" required="false" entityProperty="dataFileEntity">
+                    <caption>After commit microflow</caption>
+                    <description>After the file is succesfully committed, this microflow can be executed</description>
+                    <returnType type="Void" />
+                </property>
+                <property key="eventsAfterCommitNf" type="nanoflow" required="false" entityProperty="dataFileEntity">
+                    <caption>After commit nanoflow</caption>
+                    <description>After the file is succesfully committed, this nanoflow can be executed</description>
+                    <returnType type="Void" />
+                </property>
+            </propertyGroup>
         </propertyGroup>
 
         <!-- UI -->

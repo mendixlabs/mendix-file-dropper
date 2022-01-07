@@ -51,6 +51,8 @@ export interface FileDropperContainerProps extends CommonProps {
 
     eventsAfterCommitMf: string;
     eventsAfterCommitNf: Nanoflow;
+    eventsBeforeCommitMf: string;
+    eventsBeforeCommitNf: Nanoflow;
 
     uiDeleteButtonStyle: TypeButtonStyle;
     uiDeleteButtonGlyph: string;

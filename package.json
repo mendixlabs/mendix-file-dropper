@@ -8,7 +8,7 @@
   "config": {
     "widgetPath": "./dist/MxTestProject/widgets",
     "projectPath": "./dist/MxTestProject/",
-    "mendixHost": "http://10.211.55.3:8080",
+    "mendixHost": "http://windows:8080",
     "developmentPort": "3000"
   },
   "packagePath": "com.mendix.widget.custom",

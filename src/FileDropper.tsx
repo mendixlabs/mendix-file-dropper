@@ -193,6 +193,11 @@ class FileDropperContainer extends Component<FileDropperContainerProps, {}> {
             return false;
         }
 
+        const beforeCommitAction = await this.executeBeforeCommit();
+        if (!beforeCommitAction) {
+            return false;
+        }
+
         try {
             obj = await createObject(dataFileEntity);
             if (dataContextAssociation !== "" && this.store.contextObject !== null) {
@@ -329,6 +334,25 @@ class FileDropperContainer extends Component<FileDropperContainerProps, {}> {
                 file.setLoadProgress(0);
                 return false;
             }
+        }
+        return true;
+    }
+
+    private async executeBeforeCommit(): Promise<boolean> {
+        const { eventsBeforeCommitMf, eventsBeforeCommitNf } = this.props;
+        const obj = this.store.contextObject;
+        if (obj && (eventsBeforeCommitMf !== "" || (eventsBeforeCommitNf && eventsBeforeCommitNf.nanoflow))) {
+            let action: Action = {};
+            if (eventsBeforeCommitMf !== "") {
+                action = {
+                    microflow: eventsBeforeCommitMf
+                };
+            } else if (eventsBeforeCommitNf && eventsBeforeCommitNf.nanoflow) {
+                action = {
+                    nanoflow: eventsBeforeCommitNf
+                };
+            }
+            return this.executeAction(action, true, obj) as Promise<boolean>;
         }
         return true;
     }

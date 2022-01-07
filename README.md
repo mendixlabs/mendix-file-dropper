@@ -81,9 +81,10 @@ Verification can be done in two ways:
 
 ### 4. Events
 
-![configuration4](/assets/configuration4.png)
-
-- This microflow/nanoflow (can be used both) will be executed after a succesful upload. It will send the file object itself as an input parameter
+- Before commit:
+  - Microflow/Nanoflow that is executed before committing new files. It can be used to test out context object, to see if we need to commit it first (when associating the files with our context)
+- After commit:
+  - This microflow/nanoflow (can be used both) will be executed after a succesful upload. It will send the file object itself as an input parameter
 
 ### 5. UI
 
