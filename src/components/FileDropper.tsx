@@ -58,6 +58,7 @@ export class FileDropper extends Component<FileDropperProps, {}> {
 
     private onDrop(acceptedFiles: File[], fileRejections: FileRejection[]): void {
         const { store } = this.props;
+        const { FILERECTEDSIZE, FILESREJECTED } = store.texts;
         const maxSize = store.maxSize || null;
         let maxReached = false;
 
@@ -71,8 +72,12 @@ export class FileDropper extends Component<FileDropperProps, {}> {
             const otherRejected: File[] = [];
             fileRejections.forEach(reject => {
                 if (maxSize !== null && reject && reject.file.size && reject.file.size > maxSize) {
+                    const text = FILERECTEDSIZE
+                        .replace(/%%FILENAME%%/g, reject.file.name)
+                        .replace(/%%MAXSIZE%%/g, fileSize(maxSize));
+
                     const message = new ValidationMessage(
-                        `File: '${reject.file.name}' is rejected, file size exceeds ${fileSize(maxSize)}`,
+                        text,
                         "warning"
                     );
                     store.addValidationMessage(message);
@@ -83,7 +88,7 @@ export class FileDropper extends Component<FileDropperProps, {}> {
 
             if (otherRejected.length > 0) {
                 mx.ui.info(
-                    ["The following files are rejected:", "", ...otherRejected.map(file => file.name)].join("\n"),
+                    [FILESREJECTED, "", ...otherRejected.map(file => file.name)].join("\n"),
                     true
                 );
             }

@@ -56,7 +56,8 @@ export class FileDropperFile implements IFileDropperFile {
                 this.error = "File not saved, check logs";
                 this.status = "error";
             }
-        } catch (error) {
+            // @ts-ignore
+        } catch (error: any) {
             this.error = error;
             this.status = error;
         }
@@ -80,7 +81,8 @@ export class FileDropperFile implements IFileDropperFile {
                 }
                 this.hash = md5(base64);
             }
-        } catch (error) {
+            // @ts-ignore
+        } catch (error: any) {
             this.status = "error";
             this.error = error.message || "unknown error";
             this.data = this.base64 = null;

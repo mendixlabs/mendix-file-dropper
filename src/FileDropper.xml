@@ -294,6 +294,33 @@ Note 3: To avoid any other problem, make sure this helper object is detached fro
                     <translation lang="nl_NL">Are you sure you want to delete this file? This cannot be undone.</translation>
                 </translations>
             </property>
+            <property key="textFilesRejectedByServer" type="translatableString" required="false">
+                <caption>Rejected by server</caption>
+                <description>The %%FILENAME%% and %%ERROR%% are replaced by the widget</description>
+                <translations>
+                    <translation lang="en_US">File: '%%FILENAME%%' rejected: %%ERROR%%</translation>
+                    <translation lang="en_GB">File: '%%FILENAME%%' rejected: %%ERROR%%</translation>
+                    <translation lang="nl_NL">File: '%%FILENAME%%' rejected: %%ERROR%%</translation>
+                </translations>
+            </property>
+            <property key="textFilesRejected" type="translatableString" required="false">
+                <caption>Rejected</caption>
+                <description>Rejected files string</description>
+                <translations>
+                    <translation lang="en_US">The following files are rejected:</translation>
+                    <translation lang="en_GB">The following files are rejected:</translation>
+                    <translation lang="nl_NL">The following files are rejected:</translation>
+                </translations>
+            </property>
+            <property key="textFileRejectedSize" type="translatableString" required="false">
+                <caption>File size rejected</caption>
+                <description>String for when a file is rejected because of filesize. The %%FILENAME%% and %%MAXSIZE%% are replaced by the widget</description>
+                <translations>
+                    <translation lang="en_US">File: '%%FILENAME%%' is rejected, file size exceeds %%MAXIZE%%</translation>
+                    <translation lang="en_GB">File: '%%FILENAME%%' is rejected, file size exceeds %%MAXIZE%%</translation>
+                    <translation lang="nl_NL">File: '%%FILENAME%%' is rejected, file size exceeds %%MAXIZE%%</translation>
+                </translations>
+            </property>
         </propertyGroup>
 
     </properties>

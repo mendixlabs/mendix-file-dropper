@@ -75,4 +75,7 @@ export interface FileDropperContainerProps extends CommonProps {
     textDropZone: string;
     textDropZoneMaximum: string;
     textDeleteFileConfirm: string;
+    textFilesRejectedByServer: string;
+    textFilesRejected: string;
+    textFileRejectedSize: string;
 }
