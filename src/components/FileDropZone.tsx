@@ -1,12 +1,12 @@
 import { Component, ReactNode, createElement } from "react";
 import { observer } from "mobx-react";
-import Dropzone from "react-dropzone";
+import Dropzone, { DropEvent, FileRejection } from "react-dropzone";
 
 import { classes } from "../util/classes";
 import { FileDropperTexts } from "../util/texts";
 
 export interface FileDropZoneProps {
-    onDrop: (accepted: File[], rejected: File[]) => void;
+    onDrop: (acceptedFiles: File[], fileRejections: FileRejection[], event: DropEvent) => void;
     accept?: string;
     maxNumber: number;
     maxSize?: number;

@@ -9,6 +9,7 @@ import { FileDropZone } from "./FileDropZone";
 import { Alerts } from "./Alerts";
 import { ValidationMessage } from "@jeltemx/mendix-react-widget-utils/lib/validation";
 import fileSize from "filesize";
+import { FileRejection } from "react-dropzone";
 
 export interface FileDropperProps {
     uiProps: UIProps;
@@ -55,7 +56,7 @@ export class FileDropper extends Component<FileDropperProps, {}> {
         );
     }
 
-    private onDrop(accepted: File[], rejected: File[]): void {
+    private onDrop(acceptedFiles: File[], fileRejections: FileRejection[]): void {
         const { store } = this.props;
         const maxSize = store.maxSize || null;
         let maxReached = false;
@@ -66,17 +67,17 @@ export class FileDropper extends Component<FileDropperProps, {}> {
             return;
         }
 
-        if (rejected.length > 0) {
+        if (fileRejections.length > 0) {
             const otherRejected: File[] = [];
-            rejected.forEach(reject => {
-                if (maxSize !== null && reject && reject.size && reject.size > maxSize) {
+            fileRejections.forEach(reject => {
+                if (maxSize !== null && reject && reject.file.size && reject.file.size > maxSize) {
                     const message = new ValidationMessage(
-                        `File: '${reject.name}' is rejected, file size exceeds ${fileSize(maxSize)}`,
+                        `File: '${reject.file.name}' is rejected, file size exceeds ${fileSize(maxSize)}`,
                         "warning"
                     );
                     store.addValidationMessage(message);
                 } else {
-                    otherRejected.push(reject);
+                    otherRejected.push(reject.file);
                 }
             });
 
@@ -88,7 +89,7 @@ export class FileDropper extends Component<FileDropperProps, {}> {
             }
         }
 
-        accepted.forEach(async file => {
+        acceptedFiles.forEach(async file => {
             if (!store.maxFilesReached) {
                 await store.addFile(file);
             } else {

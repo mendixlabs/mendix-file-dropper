@@ -58,7 +58,7 @@
     "mobx": "^4.13.0",
     "mobx-react": "^6.2.2",
     "rc-progress": "^2.5.2",
-    "react-dropzone": "^10.2.2",
+    "react-dropzone": "^11.2.3",
     "react-icons": "^3.9.0",
     "uuid": "^3.3.3"
   }
