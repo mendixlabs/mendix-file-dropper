@@ -45,6 +45,12 @@ export const loadFileInMemory = (file: File, loadWithReader = true): Promise<Fil
             };
 
             reader.onload = ({ target: { result } }: any) => {
+                if (file.size === 0) {
+                    return resolve({
+                        base64: '',
+                        data: new Blob()
+                    })
+                }
                 const data = convertBase64ToBlob(result as string, file.type);
                 resolve({
                     base64: result,

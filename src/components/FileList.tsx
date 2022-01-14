@@ -172,7 +172,7 @@ export class FileList extends Component<FileListProps, {}> {
         return (
             <div className={classes("item-filesize")}>
                 <div className={classes("item-filesize__label")}>Size:</div>
-                <div className={classes("item-filesize__value")}>{size !== null ? size : "unknown"}</div>
+                <div className={classes("item-filesize__value")}>{size !== null ? size : 0}</div>
             </div>
         );
     }
