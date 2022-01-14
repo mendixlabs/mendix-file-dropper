@@ -4,7 +4,7 @@
   "version": "1.4.1",
   "description": "Drop files in your Mendix Application",
   "copyright": "Mendix 2020",
-  "author": "Jelte Lagendijk",
+  "author": "Jelte Lagendijk <jelte.lagendijk@mendix.com>",
   "config": {
     "widgetPath": "./dist/MxTestProject/widgets",
     "projectPath": "./dist/MxTestProject/",

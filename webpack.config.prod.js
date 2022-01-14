@@ -2,6 +2,7 @@ const merge = require("webpack-merge");
 const webpack = require("webpack");
 const path = require("path");
 const baseConfig = require("./node_modules/@mendix/pluggable-widgets-tools/configs/webpack.config.prod.js");//Can also be webpack.config.prod.js
+const pkg = require('./package.json');
 
 const TerserPlugin = require("terser-webpack-plugin");
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
@@ -49,7 +50,10 @@ const terserPlugin = new TerserPlugin({
         mangle: true, // Note `mangle.properties` is `false` by default.
         module: false,
         output: {
-            comments: false
+            comments: false,
+            beautify: false,
+            preamble: `/* FileDropper for Mendix || Version ${pkg.version} || Apache 2 LICENSE || Developer: ${pkg.author} || Please report any issues here: https://github.com/mendixlabs/mendix-file-dropper/issues */\n`
+            // comments: false
         },
         toplevel: false,
         nameCache: null,
