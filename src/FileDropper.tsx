@@ -92,6 +92,7 @@ class FileDropperContainer extends Component<FileDropperContainerProps, {}> {
             autoSave: props.dataAutoSave,
             maxNumber: props.restrictionMaxFileCount,
             maxSize: maxFileSize,
+            uniqueName: props.restrictionUniqueName,
             validationMessages,
             accept,
             texts,

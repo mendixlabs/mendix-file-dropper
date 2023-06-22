@@ -77,6 +77,10 @@
 Note 1: This might not always be accurate. There can be differences between platforms &amp; browsers. To be sure it is better to use the 'onAccept Microflow'
 Note 2: When using an Entity that is/inherits 'System.Image', Mime types will always be ignored and set to 'image/*'. You can further restrict this using the 'onAccept Microflow'</description>
             </property>
+            <property key="restrictionUniqueName" type="boolean" required="true" defaultValue="true">
+                <caption>Restrict Duplicates</caption>
+                <description>Restrict uploads to have unique names. If true, will ignore a file upload with a repeated name, regardless of file path.</description>
+            </property>
         </propertyGroup>
 
         <!-- VERIFICATION -->
