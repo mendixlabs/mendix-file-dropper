@@ -25,6 +25,7 @@ export interface FileDropperStoreOptions {
     accept?: string;
     maxNumber?: number;
     maxSize?: number;
+    uniqueName: boolean;
     contextObject?: mendix.lib.MxObject;
     validationMessages?: ValidationMessage[];
     saveBase64?: boolean;
@@ -34,6 +35,7 @@ export class FileDropperStore implements FileDropperStoreProps {
     public accept: string | undefined;
     public maxNumber: number;
     public maxSize: number | undefined;
+    public uniqueName: boolean;
 
     public saveMethod: ((file: IFileDropperFile) => Promise<boolean>) | null;
     public deleteMethod: ((file: IFileDropperFile) => Promise<boolean>) | null;
@@ -72,7 +74,7 @@ export class FileDropperStore implements FileDropperStoreProps {
         // We need to make sure we first clear all subscriptions, otherwise it will delete twice
         this.subscriptionHandler({});
         const files = this.files;
-        const found = files.findIndex(f => f.name === file.name);
+        const found = files.findIndex(f => f.guid === file.guid);
         if (found !== -1) {
             if (file.status === "saved" && this.deleteMethod !== null) {
                 const deleted = yield this.deleteMethod(file);
@@ -111,6 +113,7 @@ export class FileDropperStore implements FileDropperStoreProps {
             maxNumber,
             accept,
             maxSize,
+            uniqueName,
             texts,
             validationMessages,
             saveBase64
@@ -128,6 +131,7 @@ export class FileDropperStore implements FileDropperStoreProps {
         this.accept = accept;
         this.maxNumber = typeof maxNumber !== "undefined" ? maxNumber : 0;
         this.maxSize = maxSize;
+        this.uniqueName = uniqueName;
         this.texts = texts;
     }
 
@@ -157,8 +161,7 @@ export class FileDropperStore implements FileDropperStoreProps {
 
     @action
     public addFile(file: File): void {
-        const found = this.files.findIndex(f => f.name === file.name);
-        if (found === -1) {
+        if (!this.uniqueName || this.files.every(f => f.name !== file.name)) {
             const newFile = new FileDropperFile(file, this.saveMethod, this.saveBase64);
             this.files.push(newFile);
             this.saveFile(newFile);

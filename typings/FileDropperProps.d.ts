@@ -39,6 +39,7 @@ export interface FileDropperContainerProps extends CommonProps {
     restrictionMaxFileSize: number;
     restrictionMaxFileCount: number;
     restrictionMimeType: string;
+    restrictionUniqueName: boolean;
 
     verificationOnAcceptMicroflow: string;
     verificationEntity: string;
